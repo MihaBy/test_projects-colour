@@ -1,0 +1,315 @@
+body {
+	height: 100vh;
+	//width: 100vw;
+	//height: 100vh;
+	background-color: $colors__secondary;
+	font-size: $font-size--base;
+	line-height: $line-height--base;
+}
+
+.container {
+	width: 100%;
+	max-width: calc(1290px + 60px);
+	padding-right: 30px;
+	padding-left: 30px;
+	margin: 0 auto;
+
+	@include not-hg {
+		padding-right: 80px;
+		padding-left: 80px;
+	}
+
+	@include not-lg {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	@include not-sm {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.header {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin-top: 48px;
+	background-color: $colors__secondary;
+
+	@include not-xhg {
+		margin-top: 48px;
+	}
+
+	@include not-hg {
+		margin-top: 25px;
+	}
+
+	@include not-lg {
+		margin-top: 25px;
+	}
+}
+
+.header__inner {
+	display: flex;
+	height: 50px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 467px 0 326px;//0 395px 0 395px;
+
+	@include not-xhg {
+		height: 50px;
+		padding: 0 151px 0 151px;
+	}
+
+	@include not-hg {
+		height: 40px;
+		padding: 0 calc(90px - 3px) 0 90px;
+	}
+
+	@include not-lg {
+		height: 40px;
+		padding: 0 calc(31px - 3px) 0 31px;
+	}
+
+	@include not-md {
+		height: 40px;
+		padding: 0 calc(31px - 3px) 0 31px;
+	}
+}
+
+.header__logo {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	color: $colors__primary;
+	font-size: $font-size--h2--sm;
+	text-transform: uppercase;
+
+	h2 { @extend %Cormorant__b; }
+}
+
+#svg_logo {
+	circle:nth-of-type(1) {
+		fill: $colors__svg-2;
+		transition: fill 0.4s ease-in-out;
+	}
+
+	circle:nth-of-type(2) {
+		fill: $colors__svg-1;
+		transition: fill 0.4s ease-in-out;
+	}
+
+	&:hover {
+		circle:nth-of-type(1) {
+			fill: $colors__svg-1;
+		}
+
+		circle:nth-of-type(2) {
+			fill: $colors__svg-2;
+		}
+	}
+}
+
+.logo_icon {
+	display: block;
+	width: 48px;
+	height: 37.01px;
+	margin-right: 21px;
+
+	@include not-lg {
+		display: none;
+	}
+}
+
+.burger__menu {
+	z-index: 2;
+	display: none;
+	padding: 14px 3px;
+	border: 0;
+	background-color: transparent;
+	color: transparent;
+	cursor: pointer;
+
+	@include not-hg {
+		display: block;
+	}
+
+	.burger__item {
+		position: relative;
+		display: block;
+		width: 40px;
+		height: 3px;
+		background-color: $colors__primary;
+		border-radius: 15px;
+		color: transparent;
+		font-size: 0;
+
+		&::before,
+		&::after {
+			position: absolute;
+			//position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: $colors__primary;
+			border-radius: 15px;
+			content: '';
+		}
+
+		&::before {
+			transform: translateY(-10px);
+		}
+
+		&::after {
+			transform: translateY(10px);
+		}
+	}
+}
+
+/* check in JS
+.header.fixed {
+	position: fixed;
+	z-index: 2;
+	//background-color: $colors__main_3;
+
+	.header__inner {
+		padding: 10px 0;
+	}
+}
+*/
+.nav {
+	@include not-hg {
+		display: none;
+	}
+
+	.nav_link {
+		position: relative;
+		margin-left: 110px;
+
+		@extend %Montserrat__m;
+
+		color: $color__t__main;
+
+		@include link-color($color__t__main, $link_hover);
+
+		@include not-xhg {
+			margin-left: 95px;
+		}
+
+		@include not-hg {
+			margin-left: 0;
+		}
+	}
+}
+
+.nav_active {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	display: block;
+	display: flex;
+	max-width: 100vw;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-right: 0;
+	margin-left: 0;
+	background-color: $colors__main_1;
+}
+
+.nav_active + #navToggle {
+	display: block;
+}
+
+/* ---------- HERO ---------- */
+:root {
+	--height_quote__l: 52px;
+	--height_quote__s: 40px;
+}
+
+.hero {
+	display: flex;
+	height: calc(100vh - var(--height_quote__l));
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-blend-mode: hard-light;
+	background-color: $colors__primary;
+	background-image: url("../../static/img/main/hero_bg.jpg");
+	background-position: 50% 50%;
+	background-size: cover;
+
+	@include not-hg {
+		height: calc(100vh - var(--height_quote__s));
+	}
+
+	@include not-lg {
+		height: calc(100vh - var(--height_quote__s));
+		align-items: flex-end;
+		justify-content: flex-end;
+		background-size: initial;
+	}
+
+	h1 {
+		@extend %Cormorant__b;
+
+		color: $colors__secondary;
+		font-size: $font-size--h1;
+		text-transform: uppercase;
+
+		@include not-xhg {
+			font-size: $font-size--h1--sm;
+		}
+
+		@include not-hg {
+			font-size: $font-size--h1--xs;
+		}
+
+		@include not-lg {
+			height: calc(100vh - var(--height_quote__s));
+			margin-bottom: 9px;
+			font-size: $font-size--h1--s;
+			text-orientation: mixed;
+			transform: rotate(180deg);
+			writing-mode: vertical-rl;
+		}
+	}
+}
+
+.quote {
+	@extend %Cormorant-Infant__b;
+
+	display: flex;
+	width: 100%;
+	height: var(--height_quote__l);
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	background-color: $colors__primary;
+	color: $colors__secondary;
+	font-size: $font-size--l;
+	text-transform: uppercase;
+	vertical-align: center;
+
+	@include not-hg {
+		height: var(--height_quote__s);
+		font-size: $font-size--base;
+	}
+
+	@include not-lg {
+		height: var(--height_quote__s);
+		font-size: $font-size--base;
+		text-align: center;
+	}
+}

@@ -1,0 +1,180 @@
+
+// Typography
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+// Typographic Variables
+//////////////////////////////////////////////////////
+
+// Good line-height and letter-spacing
+$line-height--base: 1.25;
+//$line-height--extend: 1.2;
+//$line-height--base: 1.428571429;
+$normal-letter-spacing: normal;
+
+// Guide
+$font-size--xxs: 10px;
+$font-size--xs: 11px;
+$font-size--s: 12px;
+$font-size--sm: 14px;
+$font-size--base: 16px;
+$font-size--l: 20px;
+$font-size--xl: 24px;
+$font-size--xxl: 32px;
+
+$font-size--h1: 160px;
+$font-size--h1--sm: 128px;
+$font-size--h1--s: 110px;
+$font-size--h1--xs: 96px;
+
+$font-size--h2: 36px;
+$font-size--h2--sm: 32px;
+$font-size--h3: 24px;
+$font-size--h4: 20px;
+
+/*
+
+h1 intro_h 160 700 #FFFFFF Cormorant                    //L -> 128 700  //M -> 96 700   //S -> 110 700
+h1 intro_h 128 700 #FFFFFF Cormorant //special offers   //L -> 96 700
+h1 logo 160 700 #1C2135 Cormorant                                       //M -> 96 700
+h2 36 700 #FFFFFF Cormorant
+h3 24 700  #000000 Montserrat
+h4 desc_t 20 700 #000000 Montserrat
+
+p_logo 32 700 #1C2135 Cormorant //menu
+p_desc_t 20 400 #FFFFFF Montserrat          //L -> 16 400
+p 20 500 #000000 Montserrat
+p_after_intro 20 700 #FFFFFF Cormorant //line                           //M -> 16 700   //S -> 16 700
+p_t 24 500  #000000 Montserrat                                          //M -> 14 500   //S -> 16 500
+p_bread_crumbs_t 16 500 #1C2135 Montserrat                              //M -> NONE
+p_t2 16 400  #000000 Montserrat                                         //M -> 10 400   //S -> 16 400
+p_desc t 16 400 #FFFFFF Montserrat //footer                             //M -> 14 400   //S -> 14 400
+contact_t 16 400 #FFFFFF Montserrat //footer
+rights_C 16 400 #FFFFFF Montserrat //footer                             //M -> 12 400
+inst_t 16 400 #FFFFFF Montserrat //footer
+
+p_menu 16 500 #1C2135 Montserrat //menu
+p_after logo 11 400 #FFFFFF Montserrat //footer                         //M -> 10 400
+
+button 16 500 #ffffff Montserrat                                        //M -> 14 500
+button2 24 500 #ffffff Montserrat
+button_back 20 500  #000000 Montserrat                                  //M -> NONE
+
+#main
+
+    p_logo 32 700 #1C2135 Cormorant
+    p_menu 16 500 #1C2135 Montserrat
+    h1 intro_h 160 700 #FFFFFF Cormorant    //L -> 128 700  //M -> 96 700   //S -> 110 700
+    p_after_intro  20 700 #FFFFFF Cormorant                 //M -> 16 700   //S -> 16 700
+
+    main_first
+        h3 24 700  #000000 Montserrat
+        p_t 24 500  #000000 Montserrat                      //M -> 14 500   //S -> 16 500
+        p_t2 16 400  #000000 Montserrat                     //M -> 10 400   //S -> 16 400
+        button 16 500 #ffffff Montserrat                    //M -> 14 500
+    after_main 20 700  #1C2135                              //M -> 16 700
+
+    footer
+        h2 36 700 #FFFFFF Cormorant
+        p_desc t 16 400 #FFFFFF Montserrat                  //M -> 14 400   //S -> 14 400
+        h1 logo 160 700 #1C2135 Cormorant                   //M -> 96 700
+        p_after logo 11 400 #FFFFFF Montserrat              //M -> 10 400
+        rights_C 16 400 #FFFFFF Montserrat                  //M -> 12 400
+        contact_t 16 400 #FFFFFF Montserrat
+        inst_t 16 400 #FFFFFF Montserrat
+
+#special offers
+
+    p_logo 32 700 #1C2135 Cormorant
+    p_menu 16 500 #1C2135 Montserrat
+    h1 intro_h 128 700 #FFFFFF Cormorant    //L -> 96 700   //M -> 40 700      //S -> 64 400
+    p_desc_t 20 400 #FFFFFF Montserrat      //L -> 16 400
+    p_after_intro  20 700 #FFFFFF Cormorant                 //M -> 16 700
+
+    main
+        h3 24 700  #000000 Montserrat
+        p_t 24 500  #000000 Montserrat                      //M -> 14 500       //S -> 16 500
+        p_t2 16 400  #000000 Montserrat                     //M -> 10 500       //S -> 16 400
+        button 16 500 #ffffff Montserrat                    //M -> 14 500
+    p_after_main 20 700  #1C2135                            //M -> 16 700
+
+    footer
+        h2 36 700 #FFFFFF Cormorant
+        desc t 16 400 #FFFFFF Montserrat
+        logo 160 700 #1C2135 Cormorant
+        after logo t 11 400 #FFFFFF Montserrat
+        rights_C 16 400 #FFFFFF Montserrat
+        contact_t 16 400 #FFFFFF Montserrat
+        inst_t 16 400 #FFFFFF Montserrat
+
+#item
+    p_logo 32 700 #1C2135 Cormorant
+    p_menu 16 500 #1C2135 Montserrat
+
+    main
+        p_bread_crumbs_t 16 500 #1C2135 Montserrat          //M -> NONE
+        h2 36 700 #000000 Cormorant
+        h4 desc_t 20 700 #000000 Montserrat
+        p 20 500 #000000 Montserrat
+        h4 desc_t 20 700 #000000 Montserrat
+        p 20 500 #000000 Montserrat
+        h3 p_price 24 700 #000000 Montserrat
+        button2 24 500 #ffffff Montserrat
+        button_back 20 500  #000000 Montserrat              //M -> NONE
+        h4 20 700 #000000 Montserrat
+
+    footer
+        h2 36 700 #FFFFFF Cormorant
+        desc t 16 400 #FFFFFF Montserrat
+        logo 160 700 #1C2135 Cormorant
+        after logo t 11 400 #FFFFFF Montserrat
+        rights_C 16 400 #FFFFFF Montserrat
+        contact_t 16 400 #FFFFFF Montserrat
+        inst_t 16 400 #FFFFFF Montserrat
+
+#delivery
+
+    p_logo 32 700 #1C2135 Cormorant
+    p_menu 16 500 #1C2135 Montserrat
+
+    main
+        p_bread_crumbs_t 16 500 #1C2135 Montserrat
+        h4 20 700 #1C2135 Montserrat
+        p 20 500  #1C2135 Montserrat
+
+    footer
+
+#about
+    p_logo 32 700 #1C2135 Cormorant
+    p_menu 16 500 #1C2135 Montserrat
+
+    main
+        p_bread_crumbs_t 16 500 #1C2135 Montserrat
+        h2 36 700 #1C2135 Cormorant
+        p 20 500 #000000 Montserrat
+        h3 20 700 #000000 Montserrat
+        p 20 500 #000000 Montserrat
+*/
+// font-family
+//$font-family__sans: 'Montserrat', Helvetica, Arial, sans-serif;
+//+
+$font-family_quote: 'Cormorant Infant', serif;
+$font-family__headers: 'Cormorant', serif; //700
+$font-family__text: 'Montserrat', sans-serif; //400, 500
+//$font-family__italic: 'Cardo', serif;
+//$font-family__cursive: 'Kaushan Script', cursive;
+//$font-family__text: 'Roboto', sans-serif;
+
+//$font-family__icon-fa:'FontAwesome';
+// font-weight
+$font-weight__light: 300;
+$font-weight__regular: 400;
+$font-weight__medium: 500;
+$font-weight__semi-bold: 600;
+$font-weight__bold: 700;
+$font-weight__extra-bold: 800;
+$font-weight__bolder: 900;
+
+// font-style
+$font-style__italic: italic;
+$font-style__normal: normal;

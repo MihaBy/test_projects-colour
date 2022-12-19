@@ -1,0 +1,103 @@
+// css variables
+
+//SCSS
+
+// Paths
+//$images__path--root: "../assets/images/";
+
+//$images__our__works: "project_1.jpg","project_2.jpg","project_3.jpg","project_4.jpg","project_5.jpg","project_6.jpg";
+// Palette
+// Colors
+//////////////////////////////////////////////////////
+$colors__white: #fff;
+$colors__black: #000;
+//$colors__primary: $colors__white;
+
+$colors__primary: rgb(28, 33, 53); //#1C2135
+$colors__secondary: $colors__white;
+$colors__main_1: rgb(228, 54, 54); //#E43636
+$colors__main_2: rgb(255, 181, 71); //#FFB547
+$colors__main_3: rgb(71, 111, 255); //#476FFF
+$colors__main_4: rgb(166, 38, 38); //#A62626
+$colors__svg-1:rgb(109, 193, 254); //#6DC1FE
+$colors__svg-2:rgb(254, 239, 109); //#FEEF6D
+
+//text
+$color__t__h: $colors__secondary;
+$color__t__main: $colors__primary;
+//$color__t__secondary: $colors__white;
+
+//state
+$link_hover: $colors__main_3;
+$button_click: $colors__main_4;
+
+//bg
+
+//footer
+$footer__bg__color: $colors__main_2;
+//SVG
+
+//HERO
+
+//SVG
+
+// Gradient/backgrounds/
+
+//slick slider
+//$colors__main_1: hsl(318, 22%, 27%);
+//$colors__main_1-slider: darken($colors__main_1, 10%);
+//$colors__main_1-slider--active: lighten($colors__main_1, 60%);
+//$colors__main_1-slider_border:lighten($colors__main_1, 30%);
+
+// Grays
+
+//$colors__grays--lighter: #fafafa;
+
+// Text
+
+// Links
+
+// Borders and shadows
+
+//forms
+////////  END  COLORS/////
+
+//sizes
+
+$quote--height--max: 52px;
+$quote--height--min: 32px;
+
+//$width_content: 1170px;
+
+//font devider
+$divider_font_lg: 1.5;
+$divider_font_md: $divider_font_lg * 1.5;
+$divider_font_sm: $divider_font_md * 1.5;
+$divider_font_xs: $divider_font_sm * 1.2;
+// Breackpoints and containers
+//////////////////////////////////////////////////////
+
+// Minimum Supported Width
+$breakpoints__min:                 320px;//not use
+
+// Extra small screen / XS / phone
+//default 359px;
+$breakpoints__xs:                  320px; //not use
+
+// Small screen / SM / tablet
+$breakpoints__sm:                  361px;
+
+// Medium screen / MD desktop / нетбуки типо чтоле
+$breakpoints__md:                  811px;
+
+// Large screen / LG desktop / небольшие экраны - ноуты
+$breakpoints__lg:                  1368px;
+
+//special for grid systems
+$breakpoints__hg:              1921px;
+
+$breakpoints__min_max:             ($breakpoints__xs - 1); //320 //not use
+$breakpoints__xs_max:              ($breakpoints__sm - 1); //360
+$breakpoints__sm_max:              ($breakpoints__md - 1); //810
+$breakpoints__md_max:              ($breakpoints__lg - 1); //1367
+$breakpoints__lg_max:              ($breakpoints__hg - 1);//1920
