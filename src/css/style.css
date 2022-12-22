@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -211,10 +212,22 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
   font-weight: 700;
 }
 
-.nav .nav_link {
-  font-family: "Cormorant", serif;
+.main_portfolio h2 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.nav .nav_link, .portfolio_item__descripton div h3, .portfolio_item_btn {
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
+}
+
+.portfolio_item__descripton div p {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 body {
@@ -226,7 +239,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: calc(1290px + 60px);
+  max-width: calc(620px + 620px + 30px + 60px);
   padding-right: 30px;
   padding-left: 30px;
   margin: 0 auto;
@@ -486,7 +499,7 @@ body {
   justify-content: center;
   background-blend-mode: hard-light;
   background-color: #1c2135;
-  background-image: url("../../static/img/main/hero_bg.jpg");
+  background-image: url("https://via.placeholder.com/1920x1028");
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -561,6 +574,139 @@ body {
   .quote {
     height: var(--height_quote__s);
     font-size: 16px;
+    text-align: center;
+  }
+}
+
+/* ---------- MAIN PORTFOLIO ---------- */
+.main_portfolio h2 {
+  margin: 52px 0 36px 0;
+  font-size: 24px;
+}
+
+.main_portfolio_grid {
+  display: grid;
+  gap: 1%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+@media only screen and (max-width: 810px) {
+  .main_portfolio_grid {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio_item {
+  min-width: 310px;
+  max-width: 620px;
+  margin: 0 0 75px 0;
+  justify-self: center;
+}
+
+.preview_img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.portfolio_item__descripton {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 18px 66px;
+  color: #1c2135;
+}
+
+@media only screen and (max-width: 1920px) {
+  .portfolio_item__descripton {
+    margin: 15px 54px;
+  }
+}
+
+@media only screen and (max-width: 1367px) {
+  .portfolio_item__descripton {
+    margin: 8px 17px;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .portfolio_item__descripton {
+    margin: 0;
+  }
+}
+
+.portfolio_item__descripton div h3 {
+  font-size: 24px;
+  quotes: "“" "”";
+}
+
+@media only screen and (max-width: 1367px) {
+  .portfolio_item__descripton div h3 {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .portfolio_item__descripton div h3 {
+    display: inline-block;
+    font-size: 16px;
+  }
+}
+
+.portfolio_item__descripton div p {
+  margin-left: calc(24px / 2);
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media only screen and (max-width: 1367px) {
+  .portfolio_item__descripton div p {
+    margin-left: calc(14px / 2);
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .portfolio_item__descripton div p {
+    display: inline-block;
+    margin-left: calc(14px / 2);
+    font-size: 16px;
+  }
+}
+
+.portfolio_item_btn {
+  display: inline-block;
+  padding: 14px 24px;
+  background-color: #e43636;
+  border-radius: 13px;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1920px) {
+  .portfolio_item_btn {
+    padding: 10px 14px;
+  }
+}
+
+@media only screen and (max-width: 1367px) {
+  .portfolio_item_btn {
+    padding: 5px 13px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .portfolio_item_btn {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 14px;
     text-align: center;
   }
 }

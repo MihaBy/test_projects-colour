@@ -11,14 +11,20 @@
 	font-weight: $font-weight__bold;
 }
 
+%Montserrat__b {
+	font-family: $font-family__text;
+	font-style: $font-style__normal;
+	font-weight: $font-weight__bold;
+}
+
 %Montserrat__m {
-	font-family: $font-family__headers;
+	font-family: $font-family__text;
 	font-style: $font-style__normal;
 	font-weight: $font-weight__medium;
 }
 
 %Montserrat__r {
-	font-family: $font-family__headers;
+	font-family: $font-family__text;
 	font-style: $font-style__normal;
 	font-weight: $font-weight__regular;
 }

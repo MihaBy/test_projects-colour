@@ -25,3 +25,11 @@ pixel-glass/
 dist/
 
 .vscode/
+
+.ssh/
+
+.browserslistrc
+
+.stylelintignore
+
+.stylelintrc.json
