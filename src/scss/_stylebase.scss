@@ -37,7 +37,7 @@ body {
 }
 
 .container-h {
-	width: 100%;
+	//width: 100%;
 	//max-width: calc(620px + 620px + 30px + 60px);
 	max-width: 1270px;
 	margin: 0 auto;
@@ -163,6 +163,7 @@ body {
 	display: block;
 	width: 48px;
 	height: 37.01px;
+	padding-right: 0;
 	margin-right: 21px;
 
 	@include not-hg {
@@ -541,6 +542,10 @@ body {
 .footer__inner {
 	padding-top: 60px;
 
+	& > p {
+		padding-bottom: 30px;
+	}
+
 	p {
 		@extend %Montserrat__r;
 	}
@@ -548,9 +553,15 @@ body {
 	h1 {
 		@extend %Cormorant__b;
 
+		width: min-content;
+		padding-right: 0.2em;
+		padding-left: 50%;
+		margin-bottom: 30px;
+		margin-left: -50%;
 		background-color: $footer__bg_second_color;
 		color: $footer__bg_prime_color;
 		font-size: $font-size--h1;
+		line-height: 0.6;
 		text-transform: uppercase;
 
 		@include not-lg {
@@ -559,10 +570,23 @@ body {
 	}
 }
 
+.footer_item {
+	display: flex;
+	flex-flow: nowrap;
+	align-content: flex-start;
+	align-items: flex-start;
+	margin-bottom: 30px;
+}
+
 .footer__first_column {
+	display: inline-flex;
+	width: calc(274px + 56px);
+	flex-direction: column;
+
 	a {
 		@extend %Cormorant__b;
 
+		margin-top: calc(-1 * (#{$font-size--h2} * #{$line-height--base} - #{$font-size--h2}));
 		font-size: $font-size--h2;
 		text-transform: uppercase;
 	}
@@ -574,6 +598,7 @@ body {
 
 .footer__second_column {
 	.footer--button {
+		//display: inline-block;
 		padding: 2px 19px;
 		background: $colors__secondary;
 		border-radius: 13px;
@@ -583,6 +608,14 @@ body {
 	}
 
 	.footer-item-social {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		margin-top: 22px;
 		font-size: $font-size--base;
+
+		p {
+			margin-right: 18px;
+		}
 	}
 }
