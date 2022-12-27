@@ -550,22 +550,29 @@ body {
 		@extend %Montserrat__r;
 	}
 
-	h1 {
-		@extend %Cormorant__b;
-
-		width: min-content;
-		padding-right: 0.2em;
+	.footer__title--huge {
+		overflow: hidden;
+		height: calc(#{$font-size--h1;} * 0.6);
 		padding-left: 50%;
-		margin-bottom: 30px;
 		margin-left: -50%;
-		background-color: $footer__bg_second_color;
-		color: $footer__bg_prime_color;
-		font-size: $font-size--h1;
-		line-height: 0.6;
-		text-transform: uppercase;
 
-		@include not-lg {
-			font-size: 30px;
+		h1 {
+			@extend %Cormorant__b;
+
+			width: min-content;
+			padding-right: 0.2em;
+			//padding-left: 50%;
+			margin-bottom: 30px;
+			//margin-left: -50%;
+			background-color: $footer__bg_second_color;
+			color: $footer__bg_prime_color;
+			font-size: $font-size--h1;
+			line-height: 0.6;
+			text-transform: uppercase;
+
+			@include not-lg {
+				font-size: 30px;
+			}
 		}
 	}
 }
