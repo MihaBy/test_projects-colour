@@ -1,3 +1,5 @@
+include ../data/data
+include ../mixins/mixins
 doctype html
 html(lang="ru")
     head
@@ -23,7 +25,7 @@ html(lang="ru")
                     /*background-position-y: 0;*/
                     }
             }
-            @media ( min-width: 810px ) and (max-width:1366px) {
+            @media ( min-width: 810px ) and (max-width:1365px) {
                 HTML {
                     background-image: url("./static/img/color__m.png");
                     background-position:  50% 0;
@@ -31,7 +33,7 @@ html(lang="ru")
                     }
             
             }
-            @media ( min-width: 1367px ) and (max-width:1919px) {
+            @media ( min-width: 1366px ) and (max-width:1919px) {
                 HTML {
                     background-image: url("./static/img/color__lg.png");
                     background-position:  50% 0;
@@ -39,11 +41,11 @@ html(lang="ru")
                     }
             
             }
-        //link(rel="stylesheet" type="text/css" href="pixel-glass/styles.css")
+        link(rel="stylesheet" type="text/css" href="pixel-glass/styles.css")
         //link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
         link(rel="stylesheet" href="./src/css/style.css")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js")
-        //script(type="text/javascript" src="pixel-glass/script.js")
+        script(type="text/javascript" src="pixel-glass/script.js")
         
     body 
        

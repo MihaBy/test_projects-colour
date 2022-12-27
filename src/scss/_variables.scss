@@ -88,16 +88,16 @@ $breakpoints__xs:                  320px; //not use
 $breakpoints__sm:                  361px;
 
 // Medium screen / MD desktop / нетбуки типо чтоле
-$breakpoints__md:                  811px;
+$breakpoints__md:                  810px;
 
 // Large screen / LG desktop / небольшие экраны - ноуты
-$breakpoints__lg:                  1368px;
+$breakpoints__lg:                  1366px;
 
 //special for grid systems
-$breakpoints__hg:              1921px;
+$breakpoints__hg:              1920px;
 
 $breakpoints__min_max:             ($breakpoints__xs - 1); //320 //not use
 $breakpoints__xs_max:              ($breakpoints__sm - 1); //360
-$breakpoints__sm_max:              ($breakpoints__md - 1); //810
-$breakpoints__md_max:              ($breakpoints__lg - 1); //1367
-$breakpoints__lg_max:              ($breakpoints__hg - 1);//1920
+$breakpoints__sm_max:              ($breakpoints__md - 1); //809
+$breakpoints__md_max:              ($breakpoints__lg - 1); //1365
+$breakpoints__lg_max:              ($breakpoints__hg - 1);//1919

@@ -9,24 +9,30 @@ body {
 
 .container {
 	width: 100%;
-	max-width: calc(620px + 620px + 30px + 60px);
+	//max-width: calc(620px + 620px + 30px + 60px);
 	padding-right: 30px;
 	padding-left: 30px;
 	margin: 0 auto;
 
+	@include not-xhg {
+		max-width: 100%;
+		padding-right: 150px;
+		padding-left: 150px;
+	}
+
 	@include not-hg {
-		padding-right: 80px;
-		padding-left: 80px;
+		padding-right: 90px;
+		padding-left: 90px;
 	}
 
 	@include not-lg {
-		padding-right: 20px;
-		padding-left: 20px;
+		padding-right: 31px;
+		padding-left: 31px;
 	}
 
 	@include not-sm {
-		padding-right: 20px;
-		padding-left: 20px;
+		padding-right: 31px;
+		padding-left: 31px;
 	}
 }
 
@@ -245,8 +251,8 @@ body {
 	justify-content: center;
 	background-blend-mode: hard-light;
 	background-color: $colors__primary;
-	background-image: url("https://via.placeholder.com/1920x1028");
 	//background-image: url("../../static/img/main/hero_bg.jpg");
+	background-image: url("https://via.placeholder.com/1920x1028");
 	background-position: 50% 50%;
 	background-size: cover;
 
@@ -301,7 +307,7 @@ body {
 	color: $colors__secondary;
 	font-size: $font-size--l;
 	text-transform: uppercase;
-	vertical-align: center;
+	vertical-align: middle;
 
 	@include not-hg {
 		height: var(--height_quote__s);
@@ -323,26 +329,63 @@ body {
 
 		margin: 52px 0 36px 0;
 		font-size: $font-size--h3;
+		grid-column-end: 3;
+		grid-column-start: 1;
+
+		@include not-xhg {
+			margin: 47px 0 36px 0;
+		}
+
+		@include not-hg {
+			margin: 59px 0 13px 0;
+		}
+
+		@include not-lg {
+			width: 100%;
+			max-width: 620px;
+			margin: 32px 0 19px 0;
+			grid-column-end: 2;
+			grid-column-start: 1;
+		}
 	}
 }
 
 .main_portfolio_grid {
 	display: grid;
-	gap: 1%;
-	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	column-gap: 30px;
+	grid-template-columns: minmax(310px, 620px) minmax(310px, 620px);
 	grid-template-rows: auto;
 
+	@include not-hg {
+		column-gap: 1%;
+	}
+
 	@include not-lg {
+		justify-content: center;
 		gap: 0;
 		grid-template-columns: 1fr;
+		justify-items: center;
 	}
 }
 
 .portfolio_item {
 	min-width: 310px;
 	max-width: 620px;
-	margin: 0 0 75px 0;
-	justify-self: center;
+	margin: 0 0 79px 0;
+
+	@include not-xhg {
+		margin: 0 0 60px 0;
+	}
+
+	@include not-hg {
+		margin: 0 0 37px 0;
+	}
+
+	@include not-lg {
+		min-width: 298px;
+		margin: 0 0 30px 0;
+	}
 }
 
 .preview_img {
@@ -357,22 +400,26 @@ body {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	margin: 18px 66px;
+	margin: 17px 66px;
 	color: $colors__primary;
 
 	@include not-xhg {
-		margin: 15px 54px;
+		margin: 16px 54px;
 	}
 
 	@include not-hg {
-		margin: 8px 17px;
+		margin: 10px 17px;
 	}
 
 	@include not-lg {
-		margin: 0;
+		margin: 12px 0;
 	}
 
 	div {
+		@include not-lg {
+			margin: 0 auto 8px auto;
+		}
+
 		h3 {
 			@extend %Montserrat__m;
 

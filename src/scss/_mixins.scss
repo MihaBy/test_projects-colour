@@ -18,7 +18,7 @@
 		@content;
 	}
 }
-//not-hg <1367
+//not-hg <1366
 @mixin not-hg {
 	@media only screen and (max-width: $breakpoints__md_max) {
 		@content;

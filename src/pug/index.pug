@@ -10,22 +10,6 @@ block main
         span 50% of sales for the needs of the Ukrainian army 
     section.main_portfolio
         .container
-            h2 Latest Artwork
-            .main_portfolio_grid 
-                .portfolio_item
-                    img.preview_img(src="https://via.placeholder.com/620x716", alt="")
-                    .portfolio_item__descripton
-                        div
-                            h3
-                                q Black square
-                            p size 24х50 mm
-                        a.portfolio_item_btn(href="/") see more
-                .portfolio_item
-                    img.preview_img(src="https://via.placeholder.com/620x716", alt="")
-                    .portfolio_item__descripton
-                        div
-                            h3
-                                q Black square
-                            p size 24х50 mm
-                        a.portfolio_item_btn(href="/") see more
+            block portfolio_grid 
+                include includes/main_portfolio_grid 
     script(src="./src/js/app.js")
