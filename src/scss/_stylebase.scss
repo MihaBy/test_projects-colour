@@ -36,6 +36,38 @@ body {
 	}
 }
 
+.container-h {
+	width: 100%;
+	//max-width: calc(620px + 620px + 30px + 60px);
+	max-width: 1270px;
+	margin: 0 auto;
+
+	@include not-xhg {
+		min-width: 1064px;
+		max-width: calc(1270px + 150px + 150px);
+		padding-right: 150px;
+		padding-left: 150px;
+
+		//padding: 0 151px 0 151px;
+		//padding-right: 150px;
+		//padding-left: 150px;
+	}
+
+	@include not-hg {
+		min-width: calc(310px + 310px + 10px);
+		max-width: calc(1270px + 150px + 150px);
+		padding-right: 90px;
+		padding-left: 90px;
+	}
+
+	@include not-lg {
+		min-width: 280px;
+		max-width: calc(620px + 31px + 31px);
+		padding-right: 31px;
+		padding-left: 31px;
+	}
+}
+
 /* ---------- NAVIGATION ---------- */
 
 .header {
@@ -67,21 +99,23 @@ body {
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 467px 0 326px;//0 395px 0 395px;
+	//padding: 0 467px 0 326px;//0 395px 0 395px;
+	padding-right: 11%;
 
 	@include not-xhg {
 		height: 50px;
-		padding: 0 151px 0 151px;
+		//padding: 0 151px 0 151px;
+		padding: 0;
 	}
 
 	@include not-hg {
 		height: 40px;
-		padding: 0 calc(90px - 3px) 0 90px;
+		//padding: 0 calc(90px - 3px) 0 90px;
 	}
 
 	@include not-lg {
 		height: 40px;
-		padding: 0 calc(31px - 3px) 0 31px;
+		//padding: 0 calc(31px - 3px) 0 31px;
 	}
 
 	@include not-md {
@@ -130,6 +164,11 @@ body {
 	width: 48px;
 	height: 37.01px;
 	margin-right: 21px;
+
+	@include not-hg {
+		padding-right: 8px;
+		margin-right: 6px;
+	}
 
 	@include not-lg {
 		display: none;
@@ -319,6 +358,11 @@ body {
 		font-size: $font-size--base;
 		text-align: center;
 	}
+
+	&.--secondary_bgc {
+		background-color: $colors__secondary;
+		color: $colors__primary;
+	}
 }
 
 
@@ -460,6 +504,8 @@ body {
 .portfolio_item_btn {
 	@extend %Montserrat__m;
 
+	@include btn-bgc($colors__main_1, $button_click);
+
 	display: inline-block;
 	padding: 14px 24px;
 	background-color: $colors__main_1;
@@ -483,5 +529,60 @@ body {
 		padding: 5px 0;
 		font-size: $font-size--sm;
 		text-align: center;
+	}
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+	background-color: $footer__bg_prime_color;
+	color: $color__t__h;
+}
+
+.footer__inner {
+	padding-top: 60px;
+
+	p {
+		@extend %Montserrat__r;
+	}
+
+	h1 {
+		@extend %Cormorant__b;
+
+		background-color: $footer__bg_second_color;
+		color: $footer__bg_prime_color;
+		font-size: $font-size--h1;
+		text-transform: uppercase;
+
+		@include not-lg {
+			font-size: 30px;
+		}
+	}
+}
+
+.footer__first_column {
+	a {
+		@extend %Cormorant__b;
+
+		font-size: $font-size--h2;
+		text-transform: uppercase;
+	}
+
+	p {
+		font-size: $font-size--base;
+	}
+}
+
+.footer__second_column {
+	.footer--button {
+		padding: 2px 19px;
+		background: $colors__secondary;
+		border-radius: 13px;
+		color: $color__t__main;
+		font-size: $font-size--base;
+		text-transform: uppercase;
+	}
+
+	.footer-item-social {
+		font-size: $font-size--base;
 	}
 }

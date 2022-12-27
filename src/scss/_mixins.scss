@@ -97,6 +97,16 @@
 	}
 }
 
+@mixin btn-bgc($color, $color-hover) {
+	transition: background-color 0.2s ease;
+	will-change: background-color;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color-hover;
+	}
+}
 // Links
 @mixin link-color($color, $color-hover) {
 	//function for transition

@@ -200,7 +200,7 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
 	@include fluidFontSize(16px, 24px, 480px, 1280px, 18px);
   }
 */
-.header__logo h2, .hero h1 {
+.header__logo h2, .hero h1, .footer__inner h1, .footer__first_column a {
   font-family: "Cormorant", serif;
   font-style: normal;
   font-weight: 700;
@@ -224,7 +224,7 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
   font-weight: 500;
 }
 
-.portfolio_item__descripton div p {
+.portfolio_item__descripton div p, .footer__inner p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -273,6 +273,39 @@ body {
   }
 }
 
+.container-h {
+  width: 100%;
+  max-width: 1270px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1919px) {
+  .container-h {
+    min-width: 1064px;
+    max-width: calc(1270px + 150px + 150px);
+    padding-right: 150px;
+    padding-left: 150px;
+  }
+}
+
+@media only screen and (max-width: 1365px) {
+  .container-h {
+    min-width: calc(310px + 310px + 10px);
+    max-width: calc(1270px + 150px + 150px);
+    padding-right: 90px;
+    padding-left: 90px;
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  .container-h {
+    min-width: 280px;
+    max-width: calc(620px + 31px + 31px);
+    padding-right: 31px;
+    padding-left: 31px;
+  }
+}
+
 /* ---------- NAVIGATION ---------- */
 .header {
   position: absolute;
@@ -309,27 +342,25 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 467px 0 326px;
+  padding-right: 11%;
 }
 
 @media only screen and (max-width: 1919px) {
   .header__inner {
     height: 50px;
-    padding: 0 151px 0 151px;
+    padding: 0;
   }
 }
 
 @media only screen and (max-width: 1365px) {
   .header__inner {
     height: 40px;
-    padding: 0 calc(90px - 3px) 0 90px;
   }
 }
 
 @media only screen and (max-width: 809px) {
   .header__inner {
     height: 40px;
-    padding: 0 calc(31px - 3px) 0 31px;
   }
 }
 
@@ -374,6 +405,13 @@ body {
   width: 48px;
   height: 37.01px;
   margin-right: 21px;
+}
+
+@media only screen and (max-width: 1365px) {
+  .logo_icon {
+    padding-right: 8px;
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width: 809px) {
@@ -585,6 +623,11 @@ body {
   }
 }
 
+.quote.--secondary_bgc {
+  background-color: #fff;
+  color: #1c2135;
+}
+
 /* ---------- MAIN PORTFOLIO ---------- */
 .main_portfolio h2 {
   margin: 52px 0 36px 0;
@@ -743,6 +786,8 @@ body {
 }
 
 .portfolio_item_btn {
+  transition: background-color 0.2s ease;
+  will-change: background-color;
   display: inline-block;
   padding: 14px 24px;
   background-color: #e43636;
@@ -750,6 +795,10 @@ body {
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
+}
+
+.portfolio_item_btn:hover, .portfolio_item_btn:active, .portfolio_item_btn:focus {
+  background-color: #a62626;
 }
 
 @media only screen and (max-width: 1919px) {
@@ -773,5 +822,50 @@ body {
     font-size: 14px;
     text-align: center;
   }
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background-color: #1c2135;
+  color: #fff;
+}
+
+.footer__inner {
+  padding-top: 60px;
+}
+
+.footer__inner h1 {
+  background-color: #ffb547;
+  color: #1c2135;
+  font-size: 160px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 809px) {
+  .footer__inner h1 {
+    font-size: 30px;
+  }
+}
+
+.footer__first_column a {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.footer__first_column p {
+  font-size: 16px;
+}
+
+.footer__second_column .footer--button {
+  padding: 2px 19px;
+  background: #fff;
+  border-radius: 13px;
+  color: #1c2135;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.footer__second_column .footer-item-social {
+  font-size: 16px;
 }
 /*# sourceMappingURL=style.css.map */

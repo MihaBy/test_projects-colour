@@ -6,10 +6,11 @@ block main
             | UA
             wbr
             | COLOUR
-    p.quote 
-        span 50% of sales for the needs of the Ukrainian army 
+    block quote 
+        include ./includes/quote_section
     section.main_portfolio
         .container
             block portfolio_grid 
-                include includes/main_portfolio_grid 
-    script(src="./src/js/app.js")
+                include includes/main_portfolio_grid
+    block quote 
+        include ./includes/quote_secondary_section

@@ -48,14 +48,16 @@
   </head>
   <body> 
     <header class="header">
-      <div class="header__inner"> <a class="header__logo" href="./">
-          <svg class="logo_icon">
-            <use xlink:href="./static/img/svg/sprite.svg#svg_logo"></use>
-          </svg>
-          <h2>Uacolour</h2>
-          <!--Source Code Pro line-height: 60px;--></a>
-        <nav class="nav" id="nav"><a class="nav_link" href="./artworks.html">Artworks</a><a class="nav_link" href="./offers.html">Special Offers</a><a class="nav_link" href="./delivery.html">Delivery</a><a class="nav_link" href="./about.html">About</a></nav>
-        <button class="burger__menu" type="button" id="navToggle"> <span class="burger__item">Menu</span></button>
+      <div class="container-h">
+        <div class="header__inner"> <a class="header__logo" href="./">
+            <svg class="logo_icon">
+              <use xlink:href="./static/img/svg/sprite.svg#svg_logo"></use>
+            </svg>
+            <h2>Uacolour</h2>
+            <!--Source Code Pro line-height: 60px;--></a>
+          <nav class="nav" id="nav"><a class="nav_link" href="./artworks.html">Artworks</a><a class="nav_link" href="./offers.html">Special Offers</a><a class="nav_link" href="./delivery.html">Delivery</a><a class="nav_link" href="./about.html">About</a></nav>
+          <button class="burger__menu" type="button" id="navToggle"> <span class="burger__item">Menu</span></button>
+        </div>
       </div>
     </header>
     <div class="hero" data-height="hero">
@@ -168,10 +170,33 @@
         </div>
       </div>
     </section>
+    <p class="quote --secondary_bgc"><span>50% of sales for the needs of the Ukrainian army </span></p>
+    <footer class="footer"> 
+      <div class="container-h">
+        <div class="footer__inner">
+          <div class="footer__first_column"><a class="footer__title">
+              <h2 href="/">uacolour</h2></a>
+            <p class="footer__description">The Creation of Art</p>
+          </div>
+          <div class="footer__second_column"><a class="footer--button" href="./about.html">contact us</a>
+            <div class="footer-item-social">
+              <p>icon _ insta</p>
+              <p>icon _ insta</p>
+              <p>icon _ insta</p>
+            </div>
+          </div>
+          <h1 class="footer__title--huge">uacolour</h1>
+          <p class="footer__about_us">A private limited company incorporated in England and Wales under company number 10063271. Registered at 1st Floor, 12-16 Clerkenwell Road, London, EC1M 5PQ</p>
+          <p class="footer__copyright">All rights reserved &#32; uacolour 2022</p>
+        </div>
+      </div>
+    </footer>
+    <!--script(src="./src/js/wow.min.js")-->
+    <!--script(src="./src/js/parallax.min.js")-->
+    <!--script(src="./src/js/accordion.min.js")-->
+    <!--script(src="./src/js/masonry.pkgd.min.js")-->
+    <!--script(src="./src/js/imagesloaded.pkgd.min.js")-->
     <script src="./src/js/app.js"></script>
-    <!--block quote -->
-    <!--include ../includes/quote_section-->
-    <!--block footer -->
-    <!--include ../includes/footer-->
+    <!-- script(src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js")-->
   </body>
 </html>
