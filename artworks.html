@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@700&amp;family=Cormorant:wght@700&amp;family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <title>UACOLOUR</title>
+    <style type="text/css">
+      HTML {
+          background-repeat: no-repeat;
+          background-position:  50% 0;
+          /* Mobile layout by default */
+          background-image: url( "./static/img/color__full.png" );
+          
+          }
+      @media   ( min-width: 360px ) and (max-width:809px) {
+          HTML {
+              background-image: url("./static/img/color__sm.png");
+              background-position:  50% 0;
+              /*background-position-y: 0;*/
+              }
+      }
+      @media ( min-width: 810px ) and (max-width:1365px) {
+          HTML {
+              background-image: url("./static/img/color__m.png");
+              background-position:  50% 0;
+              /*background-position-y: 0;*/
+              }
+      
+      }
+      @media ( min-width: 1366px ) and (max-width:1919px) {
+          HTML {
+              background-image: url("./static/img/color__lg.png");
+              background-position:  50% 0;
+              /*background-position-y: 0;*/
+              }
+      
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="pixel-glass/styles.css">
+    <!--link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")-->
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="pixel-glass/script.js"></script>
+  </head>
+  <body> 
+    <header class="header">
+      <div class="container-h">
+        <div class="header__inner"> <a class="header__logo" href="./">
+            <svg class="logo_icon">
+              <use xlink:href="./static/img/svg/sprite.svg#svg_logo"></use>
+            </svg>
+            <h2>Uacolour</h2>
+            <!--Source Code Pro line-height: 60px;--></a>
+          <nav class="nav" id="nav"><a class="nav_link" href="./artworks.html">Artworks</a><a class="nav_link" href="./offers.html">Special Offers</a><a class="nav_link" href="./delivery.html">Delivery</a><a class="nav_link" href="./about.html">About</a></nav>
+          <button class="burger__menu" type="button" id="navToggle"> <span class="burger__item">Menu</span></button>
+        </div>
+      </div>
+    </header>
+    <div class="container-h">
+      <div class="art-division">
+        <div class="breadcrumb"><a href="/">home </a><a href="/">black square</a></div>
+        <div class="art-item"> 
+          <div class="art-item__img-section"> 
+            <div class="art-img_slider"><img src="https://via.placeholder.com/532x720"></div>
+          </div>
+          <div class="art-item__content">
+            <h2>
+              <q>Black square</q>
+            </h2>
+            <h4>Description: </h4>
+            <p>Black Square (also known as The Black Square or Malevich's Black Square) is an iconic painting by Kazimir Malevich. The first version was done in 1915. Malevich made four variants of which the last is thought to have been painted during the late 1920s or early 1930s. Black Square was first shown in The Last Futurist Exhibition 0,10 in 1915. The work is frequently invoked by critics, historians, curators, and artists as the "zero point of painting", referring to the painting's historical significance and paraphrasing Malevich.</p>
+            <h4>Performance technique:</h4>
+            <p>Oil picture is painted on mdf board, covered with linen canvas.</p>
+            <h4>Size:</h4>
+            <p>W 49.00 cm x H 59.00 cm</p>
+            <h3>£330.00</h3><a class="portfolio_item_btn" href="/">buy</a><a class="back_button"> 
+              <svg class="back_icon">
+                <use xlink:href="./static/img/svg/sprite.svg#svg_back_icon"></use>
+              </svg><span>back </span></a>
+          </div>
+        </div>
+        <div class="recent-product-list">
+          <h4>Останні переглянуті товари</h4>
+          <div class="recent-product-list__inner"> 
+            <div class="product-preview__item"> <img src="https://via.placeholder.com/222x287"></div>
+            <div class="product-preview__item"> <img src="https://via.placeholder.com/222x287"></div>
+            <div class="product-preview__item"> <img src="https://via.placeholder.com/222x287"></div>
+            <div class="product-preview__item"> <img src="https://via.placeholder.com/222x287"></div>
+          </div>
+        </div>
+        <div class="rand-product-list">
+          <h4>Більше товарів для вибору</h4>
+          <div class="recent-product-list__inner"> 
+            <div class="product-preview__item"> <img src="https://via.placeholder.com/222x287"></div>
+            <div class="product-preview__item"> <img src="https://via.placeholder.com/222x287"></div>
+            <div class="product-preview__item"> <img src="https://via.placeholder.com/222x287"></div>
+            <div class="product-preview__item"> <img src="https://via.placeholder.com/222x287"></div>
+            <div class="product-preview__item"> <img src="https://via.placeholder.com/222x287"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"> 
+      <div class="container-h">
+        <div class="footer__inner">
+          <div class="footer_item">
+            <div class="footer__first_column"><a class="footer__title" href="/">
+                <h2>uacolour</h2></a>
+              <p class="footer__description">The Creation of Art</p>
+            </div>
+            <div class="footer__second_column"><a class="footer--button" href="./about.html">contact us</a>
+              <div class="footer-item-social"><a href="/">icon _ insta</a><a href="/">icon _ insta</a><a href="/">icon _ insta</a></div>
+            </div>
+          </div>
+          <h1 class="footer__title--huge"> <span>uacolour</span></h1>
+          <p class="footer__about_us">A private limited company incorporated in England and Wales under company number 10063271. Registered at 1st Floor, 12-16 Clerkenwell Road, London, EC1M 5PQ</p>
+          <p class="footer__copyright">All rights reserved © uacolour 2022</p>
+        </div>
+      </div>
+    </footer>
+    <!--script(src="./src/js/wow.min.js")-->
+    <!--script(src="./src/js/parallax.min.js")-->
+    <!--script(src="./src/js/accordion.min.js")-->
+    <!--script(src="./src/js/masonry.pkgd.min.js")-->
+    <!--script(src="./src/js/imagesloaded.pkgd.min.js")-->
+    <script src="./src/js/app.js"></script>
+    <!-- script(src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js")-->
+  </body>
+</html>

@@ -7,6 +7,7 @@ body {
 	line-height: $line-height--base;
 }
 
+/*
 .container {
 	width: 100%;
 	//max-width: calc(620px + 620px + 30px + 60px);
@@ -35,7 +36,7 @@ body {
 		padding-left: 31px;
 	}
 }
-
+*/
 .container-h {
 	//width: 100%;
 	//max-width: calc(620px + 620px + 30px + 60px);
@@ -736,5 +737,81 @@ body {
 
 	@include not-lg {
 		order: 2;
+	}
+}
+
+
+/* ---------- ARTWORKS ---------- */
+
+.art-division {
+	margin-top: 193px;
+
+	h3 {
+		@extend %Montserrat__b;
+
+		font-size: $font-size--h3;
+	}
+
+	h4 {
+		@extend %Montserrat__b;
+
+		font-size: $font-size--h4;
+	}
+
+	h2 {
+		@extend %Cormorant__b;
+
+		font-size: $font-size--h2;
+	}
+
+	p {
+		@extend %Montserrat__m;
+	}
+}
+
+.breadcrumb {
+	@extend %Montserrat__m;
+
+	a {
+		margin-right: 13px;
+
+		&::after {
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			margin-left: 13px;
+			background-color: $colors__main_4;
+			content: '';
+		}
+	}
+}
+
+.art-item {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-top: 20px;
+}
+
+.art-item__content {
+	margin-left: 60px;
+}
+
+.recent-product-list__inner {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+
+	.product-preview__item {
+		margin-right: 27px;
+	}
+}
+
+.recent-product-list,
+.rand-product-list {
+	margin-bottom: 54px;
+
+	h4 {
+		margin-bottom: 20px;
 	}
 }

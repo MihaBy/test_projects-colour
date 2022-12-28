@@ -1,0 +1,54 @@
+extends templates/layout
+
+block main
+    .container-h
+        .art-division
+            .breadcrumb
+                a(href="/") home 
+                a(href="/") black square
+            .art-item 
+                .art-item__img-section 
+                    .art-img_slider
+                        img(src="https://via.placeholder.com/532x720")
+                .art-item__content
+                    h2
+                        q Black square
+                    h4 Description: 
+                    p Black Square (also known as The Black Square or Malevich's Black Square) is an iconic painting by Kazimir Malevich. The first version was done in 1915. Malevich made four variants of which the last is thought to have been painted during the late 1920s or early 1930s. Black Square was first shown in The Last Futurist Exhibition 0,10 in 1915. The work is frequently invoked by critics, historians, curators, and artists as the "zero point of painting", referring to the painting's historical significance and paraphrasing Malevich.
+                    h4 Performance technique:
+                    p Oil picture is painted on mdf board, covered with linen canvas.
+                    h4 Size:
+                    p W 49.00 cm x H 59.00 cm
+                    h3 £330.00
+                    a.portfolio_item_btn(href="/") buy
+                    a.back_button 
+                        svg.back_icon
+                            use(xlink:href="./static/img/svg/sprite.svg#svg_back_icon")
+                        span back 
+
+
+            .recent-product-list
+                h4 Останні переглянуті товари
+                .recent-product-list__inner 
+                    .product-preview__item 
+                        img(src="https://via.placeholder.com/222x287")
+                    .product-preview__item 
+                        img(src="https://via.placeholder.com/222x287")
+                    .product-preview__item 
+                        img(src="https://via.placeholder.com/222x287")
+                    .product-preview__item 
+                        img(src="https://via.placeholder.com/222x287")
+
+            .rand-product-list
+                h4 Більше товарів для вибору
+                .recent-product-list__inner 
+                    .product-preview__item 
+                        img(src="https://via.placeholder.com/222x287")
+                    .product-preview__item 
+                        img(src="https://via.placeholder.com/222x287")
+                    .product-preview__item 
+                        img(src="https://via.placeholder.com/222x287")
+                    .product-preview__item 
+                        img(src="https://via.placeholder.com/222x287")
+                    .product-preview__item 
+                        img(src="https://via.placeholder.com/222x287")
