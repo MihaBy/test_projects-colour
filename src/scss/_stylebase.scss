@@ -543,6 +543,7 @@ body {
 	display: flex;
 	flex-flow: column;
 	padding-top: 69px;
+	padding-bottom: 20px;
 
 	@include not-hg {
 		padding-top: 36px;
@@ -550,10 +551,15 @@ body {
 
 	@include not-lg {
 		padding-top: 30px;
+		padding-bottom: 0;
 	}
 
 	& > p {
 		padding-bottom: 12px;
+
+		@include not-xhg {
+			padding-bottom: 25px;
+		}
 
 		@include not-hg {
 			padding-bottom: 25px;
@@ -590,6 +596,7 @@ body {
 
 		@include not-hg {
 			width: auto;
+			order: 2;
 			margin-bottom: 24px;
 			font-size: $font-size--h1--xs;
 		}
@@ -671,7 +678,8 @@ body {
 		font-size: $font-size--base;
 		text-transform: uppercase;
 
-		@include not-hg {
+		@include link-color($color__t__main, $colors__main_2)
+			@include not-hg {
 			padding: 4px 43px;
 		}
 
@@ -688,10 +696,11 @@ body {
 		font-size: $font-size--base;
 
 		@include not-hg {
-			flex-direction: column;
+			flex-direction: row;
 		}
 
 		@include not-lg {
+			flex-direction: column;
 			margin-top: 33px;
 		}
 
@@ -712,6 +721,7 @@ body {
 
 	@include not-hg {
 		max-width: 500px;
+		order: 3;
 		font-size: $font-size--xxs;
 	}
 }
@@ -720,10 +730,11 @@ body {
 	order: 4;
 
 	@include not-hg {
+		order: 4;
 		font-size: $font-size--s;
 	}
 
-	@include not-hg {
+	@include not-lg {
 		order: 2;
 	}
 }
