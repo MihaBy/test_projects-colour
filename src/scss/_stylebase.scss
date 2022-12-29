@@ -121,7 +121,8 @@ body {
 
 	@include not-md {
 		height: 40px;
-		padding: 0 calc(31px - 3px) 0 31px;
+		//padding: 0 calc(31px - 3px) 0 31px;
+		
 	}
 }
 
@@ -679,7 +680,7 @@ body {
 		font-size: $font-size--base;
 		text-transform: uppercase;
 
-		@include link-color($color__t__main, $colors__main_2)
+		@include link-color($color__t__main, $colors__main_2);
 			@include not-hg {
 			padding: 4px 43px;
 		}
