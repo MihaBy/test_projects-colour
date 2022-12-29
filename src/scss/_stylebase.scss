@@ -744,28 +744,57 @@ body {
 /* ---------- ARTWORKS ---------- */
 
 .art-division {
-	margin-top: 193px;
+	margin-top: 153px;
+	margin-right: 26px;
+	margin-left: 26px;
+	line-height: $line-height--custom;
+
+	@include not-xhg {
+		margin-top: 129px;
+	}
+
+	a {
+		@extend %Montserrat__m;
+	}
 
 	h3 {
 		@extend %Montserrat__b;
 
 		font-size: $font-size--h3;
+
+		&:last-of-type {
+			margin-bottom: 43px;
+		}
 	}
 
 	h4 {
 		@extend %Montserrat__b;
 
+		margin-bottom: 25px;
 		font-size: $font-size--h4;
+		text-align: justify;
 	}
 
 	h2 {
 		@extend %Cormorant__b;
 
+		margin-bottom: 20px;
 		font-size: $font-size--h2;
 	}
 
 	p {
 		@extend %Montserrat__m;
+
+		margin-bottom: 24px;
+		font-size: $font-size--l;
+
+		&:first-of-type {
+			margin-bottom: 48px;
+		}
+
+		&:last-of-type {
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -779,9 +808,13 @@ body {
 			display: inline-block;
 			width: 8px;
 			height: 8px;
-			margin-left: 13px;
+			margin-left: 10px;
 			background-color: $colors__main_4;
 			content: '';
+
+			@include not-xhg {
+				margin-left: 7px;
+			}
 		}
 	}
 }
@@ -790,11 +823,45 @@ body {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	margin-top: 20px;
+	margin-top: 10px;
+	margin-bottom: 54px;
+
+	--art-item_margin-r: 60px;
+}
+
+.art-item__img-section {
+	width: calc(50% - var(--art-item_margin-r) / 2);
+	max-width: 533px;
+	max-height: 720px;
+	margin-top: 10px;
+
+	.art-img_slider {
+		//min-width: 474px;
+		max-width: 533px;
+
+		.art-img_slider__main-img {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $colors__primary;
+
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
 }
 
 .art-item__content {
-	margin-left: 60px;
+	display: flex;
+	width: calc(50% - var(--art-item_margin-r) / 2);
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: flex-start;
+	align-items: flex-start;
+	margin-left: var(--art-item_margin-r);
 }
 
 .recent-product-list__inner {
@@ -816,4 +883,25 @@ body {
 	}
 }
 
-// del
+.back_button {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-self: end;
+	justify-content: center;
+	font-size: $font-size--l;
+
+	.back_icon {
+		width: 102px;
+		height: 24px;
+		fill: $colors__primary;
+	}
+
+	span {
+		padding-left: 10px;
+	}
+}
+
+.--ext_padding {
+	padding: 13px 78px;
+}

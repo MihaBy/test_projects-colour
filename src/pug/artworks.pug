@@ -1,4 +1,4 @@
-extends templates/layout
+extends templates/layout_artworks
 
 block main
     .container-h
@@ -9,7 +9,8 @@ block main
             .art-item 
                 .art-item__img-section 
                     .art-img_slider
-                        img(src="https://via.placeholder.com/532x720")
+                        .art-img_slider__main-img
+                            img(src="https://via.placeholder.com/532x720")
                 .art-item__content
                     h2
                         q Black square
@@ -20,8 +21,8 @@ block main
                     h4 Size:
                     p W 49.00 cm x H 59.00 cm
                     h3 £330.00
-                    a.portfolio_item_btn(href="/") buy
-                    a.back_button 
+                    a.portfolio_item_btn.--ext_padding(href="/") buy
+                    a.back_button(href="/")
                         svg.back_icon
                             use(xlink:href="./static/img/svg/sprite.svg#svg_back_icon")
                         span back 

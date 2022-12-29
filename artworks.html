@@ -13,19 +13,19 @@
           background-repeat: no-repeat;
           background-position:  50% 0;
           /* Mobile layout by default */
-          background-image: url( "./static/img/color__full.png" );
+          background-image: url( "./static/img/color-art__full.png" );
           
           }
       @media   ( min-width: 360px ) and (max-width:809px) {
           HTML {
-              background-image: url("./static/img/color__sm.png");
+              background-image: url("./static/img/color-art__sm.png");
               background-position:  50% 0;
               /*background-position-y: 0;*/
               }
       }
       @media ( min-width: 810px ) and (max-width:1365px) {
           HTML {
-              background-image: url("./static/img/color__m.png");
+              background-image: url("./static/img/color-art__m.png");
               background-position:  50% 0;
               /*background-position-y: 0;*/
               }
@@ -33,7 +33,7 @@
       }
       @media ( min-width: 1366px ) and (max-width:1919px) {
           HTML {
-              background-image: url("./static/img/color__lg.png");
+              background-image: url("./static/img/color-art__lg.png");
               background-position:  50% 0;
               /*background-position-y: 0;*/
               }
@@ -65,7 +65,9 @@
         <div class="breadcrumb"><a href="/">home </a><a href="/">black square</a></div>
         <div class="art-item"> 
           <div class="art-item__img-section"> 
-            <div class="art-img_slider"><img src="https://via.placeholder.com/532x720"></div>
+            <div class="art-img_slider">
+              <div class="art-img_slider__main-img"><img src="https://via.placeholder.com/532x720"></div>
+            </div>
           </div>
           <div class="art-item__content">
             <h2>
@@ -77,7 +79,7 @@
             <p>Oil picture is painted on mdf board, covered with linen canvas.</p>
             <h4>Size:</h4>
             <p>W 49.00 cm x H 59.00 cm</p>
-            <h3>£330.00</h3><a class="portfolio_item_btn" href="/">buy</a><a class="back_button"> 
+            <h3>£330.00</h3><a class="portfolio_item_btn --ext_padding" href="/">buy</a><a class="back_button" href="/">
               <svg class="back_icon">
                 <use xlink:href="./static/img/svg/sprite.svg#svg_back_icon"></use>
               </svg><span>back </span></a>
@@ -117,7 +119,10 @@
             </div>
           </div>
           <h1 class="footer__title--huge"> <span>uacolour</span></h1>
-          <p class="footer__about_us">A private limited company incorporated in England and Wales under company number 10063271. Registered at 1st Floor, 12-16 Clerkenwell Road, London, EC1M 5PQ</p>
+          <p class="footer__about_us">
+             A private limited company incorporated in England and Wales under company number 10063271. 
+            <wbr>Registered at 1st Floor, 12-16 Clerkenwell Road, London, EC1M 5PQ
+          </p>
           <p class="footer__copyright">All rights reserved © uacolour 2022</p>
         </div>
       </div>
