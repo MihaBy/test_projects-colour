@@ -1,17 +1,17 @@
 extends templates/layout_artworks
 
 block main
-    .container-h
+    .container--special
         .art-division
             .breadcrumb
                 a(href="/") home 
                 a(href="/") black square
-            .art-item 
+            .art-item
                 .art-item__img-section 
                     .art-img_slider
                         .art-img_slider__main-img
                             img(src="https://via.placeholder.com/532x720")
-                .art-item__content
+                .art-item__content.container--special-restore
                     h2
                         q Black square
                     h4 Description: 
@@ -27,7 +27,7 @@ block main
                             use(xlink:href="./static/img/svg/sprite.svg#svg_back_icon")
                         span back 
 
-
+        //
             .recent-product-list
                 h4 Останні переглянуті товари
                 .recent-product-list__inner 

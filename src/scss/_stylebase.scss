@@ -69,6 +69,45 @@ body {
 	}
 }
 
+.container--special {
+	//width: 100%;
+	//max-width: calc(620px + 620px + 30px + 60px);
+	max-width: 1270px;
+	margin: 0 auto;
+
+	@include not-xhg {
+		min-width: 1064px;
+		max-width: calc(1270px + 150px + 150px);
+		padding-right: 150px;
+		padding-left: 150px;
+
+		//padding: 0 151px 0 151px;
+		//padding-right: 150px;
+		//padding-left: 150px;
+	}
+
+	@include not-hg {
+		width: 100%;
+		min-width: 100%;
+		padding: 0;
+		margin: 0 auto;
+
+		.container--special-restore {
+			min-width: calc(310px + 310px + 10px);
+			max-width: calc(1270px + 150px + 150px);
+			padding-right: 90px;
+			padding-left: 90px;
+		}
+	}
+
+	@include not-lg {
+		//min-width: 280px;
+		//max-width: calc(620px + 31px + 31px);
+		//padding-right: 31px;
+		//padding-left: 31px;
+	}
+}
+
 /* ---------- NAVIGATION ---------- */
 
 .header {
@@ -122,7 +161,6 @@ body {
 	@include not-md {
 		height: 40px;
 		//padding: 0 calc(31px - 3px) 0 31px;
-		
 	}
 }
 
@@ -367,7 +405,6 @@ body {
 		color: $colors__primary;
 	}
 }
-
 
 /* ---------- MAIN PORTFOLIO ---------- */
 .main_portfolio {
@@ -681,7 +718,8 @@ body {
 		text-transform: uppercase;
 
 		@include link-color($color__t__main, $colors__main_2);
-			@include not-hg {
+
+		@include not-hg {
 			padding: 4px 43px;
 		}
 
@@ -741,7 +779,6 @@ body {
 	}
 }
 
-
 /* ---------- ARTWORKS ---------- */
 
 .art-division {
@@ -752,6 +789,12 @@ body {
 
 	@include not-xhg {
 		margin-top: 129px;
+	}
+
+	@include not-hg {
+		margin-top: 0;
+		margin-right: 0;
+		margin-left: 0;
 	}
 
 	a {
@@ -773,7 +816,6 @@ body {
 
 		margin-bottom: 25px;
 		font-size: $font-size--h4;
-		
 	}
 
 	h2 {
@@ -785,12 +827,17 @@ body {
 
 	p {
 		@extend %Montserrat__m;
-		text-align: justify;
+
 		margin-bottom: 24px;
 		font-size: $font-size--l;
+		text-align: justify;
 
 		&:first-of-type {
 			margin-bottom: 48px;
+
+			@include not-xhg {
+				margin-bottom: 24px;
+			}
 		}
 
 		&:last-of-type {
@@ -801,6 +848,10 @@ body {
 
 .breadcrumb {
 	@extend %Montserrat__m;
+
+	@include not-hg {
+		display: none;
+	}
 
 	a {
 		margin-right: 13px;
@@ -826,15 +877,44 @@ body {
 	flex-wrap: nowrap;
 	margin-top: 10px;
 	margin-bottom: 54px;
+	//
+	--art-item_margin-r__full: 60px;
+	--art-item_margin-r__xhg: 34px;
 
-	--art-item_margin-r: 60px;
+	@include not-hg {
+		flex-direction: column;
+		margin-top: 0;
+	}
 }
 
 .art-item__img-section {
-	width: calc(50% - var(--art-item_margin-r) / 2);
-	max-width: 533px;
-	max-height: 720px;
+	width: auto;
+	min-width: 474px;
+	//width: calc(54% - var(--art-item_margin-r__full) / 2);
+
 	margin-top: 10px;
+
+	@include not-hg {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 0;
+		background-color: $colors__primary;
+		justify-items: center;
+
+		/*
+		&::after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: block;
+			width: 100vw;
+			content: "";
+		} */
+	}
 
 	.art-img_slider {
 		//min-width: 474px;
@@ -857,12 +937,23 @@ body {
 
 .art-item__content {
 	display: flex;
-	width: calc(50% - var(--art-item_margin-r) / 2);
+	width: calc(54% - var(--art-item_margin-r__full) / 2);
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-content: flex-start;
 	align-items: flex-start;
-	margin-left: var(--art-item_margin-r);
+	margin-left: var(--art-item_margin-r__full);
+
+	@include not-xhg {
+		//width: auto;
+		width: calc(54% + var(--art-item_margin-r__xhg));
+		margin-left: var(--art-item_margin-r__xhg);
+	}
+
+	@include not-hg {
+		width: auto;
+		margin-left: 0;
+	}
 }
 
 .recent-product-list__inner {
@@ -907,28 +998,31 @@ body {
 	padding: 13px 78px;
 }
 
-
 /* ---------- ABOUT ---------- */
 
 .about__wrapper {
-	margin-top: 153px;
-	margin-right: 26px;
-	margin-left: 26px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	margin-top: 153px;
+	margin-right: 26px;
 	margin-bottom: 70px;
+	margin-left: 26px;
+
 	h2 {
 		@extend %Cormorant__b;
-		text-transform: uppercase;
+
 		margin-bottom: 20px;
 		font-size: $font-size--h2;
+		text-transform: uppercase;
 	}
-	p { 
+
+	p {
 		@extend %Montserrat__m;
-		text-align: justify;
+
 		margin-bottom: 24px;
 		font-size: $font-size--l;
+		text-align: justify;
 
 		&:first-of-type {
 			margin-bottom: 48px;
@@ -938,44 +1032,47 @@ body {
 			margin-bottom: 20px;
 		}
 	}
+
 	h4 {
 		@extend %Montserrat__b;
 
 		margin-bottom: 25px;
 		font-size: $font-size--h4;
-		}
+	}
 }
 
 .about__img {
-	width: 30%;
-	background-color: $colors__primary;
 	display: flex;
-	justify-items: center;
+	width: 30%;
 	align-items: center;
 	justify-content: center;
-	img{
+	background-color: $colors__primary;
+	justify-items: center;
+
+	img {
 		display: block;
 		width: 100%;
 		height: auto;
 	}
+}
 
-}
-.about__content{
-	margin-left: 32px;
+.about__content {
 	width: calc(70% - 32px);
+	margin-left: 32px;
 }
-.about__second__img{
-	background-color: $colors__primary;
+
+.about__second__img {
 	display: flex;
-	justify-items: center;
-	align-items: center;
-	justify-content: center;
 	width: 100%;
 	height: 10vh;
-	img{
+	align-items: center;
+	justify-content: center;
+	background-color: $colors__primary;
+	justify-items: center;
+
+	img {
 		display: block;
 		width: 100%;
 		height: auto;
 	}
-	width: 100%;
 }
