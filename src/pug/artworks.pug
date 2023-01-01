@@ -26,9 +26,7 @@ block main
                         svg.back_icon
                             use(xlink:href="./static/img/svg/sprite.svg#svg_back_icon")
                         span back 
-
-        //
-            .recent-product-list
+            .recent-product-list.container--special-restore
                 h4 Останні переглянуті товари
                 .recent-product-list__inner 
                     .product-preview__item 
@@ -40,7 +38,7 @@ block main
                     .product-preview__item 
                         img(src="https://via.placeholder.com/222x287")
 
-            .rand-product-list
+            .rand-product-list.container--special-restore
                 h4 Більше товарів для вибору
                 .recent-product-list__inner 
                     .product-preview__item 

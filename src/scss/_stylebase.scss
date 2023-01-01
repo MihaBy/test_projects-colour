@@ -101,10 +101,12 @@ body {
 	}
 
 	@include not-lg {
-		//min-width: 280px;
-		//max-width: calc(620px + 31px + 31px);
-		//padding-right: 31px;
-		//padding-left: 31px;
+		.container--special-restore {
+			min-width: 280px;
+			max-width: calc(620px + 31px + 31px);
+			padding-right: 31px;
+			padding-left: 31px;
+		}
 	}
 }
 
@@ -807,7 +809,7 @@ body {
 		font-size: $font-size--h3;
 
 		&:last-of-type {
-			margin-bottom: 43px;
+			margin-bottom: 40px;
 		}
 	}
 
@@ -837,6 +839,10 @@ body {
 
 			@include not-xhg {
 				margin-bottom: 24px;
+			}
+
+			@include not-hg {
+				margin-bottom: 48px;
 			}
 		}
 
@@ -899,21 +905,16 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		padding-top: 88px;
 		margin-top: 0;
+		margin-bottom: 14px;
 		background-color: $colors__primary;
 		justify-items: center;
+	}
 
-		/*
-		&::after {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			display: block;
-			width: 100vw;
-			content: "";
-		} */
+	@include not-lg {
+		min-width: auto;
+		padding-top: 120px;
 	}
 
 	.art-img_slider {
@@ -963,6 +964,54 @@ body {
 
 	.product-preview__item {
 		margin-right: 27px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		@include not-xhg {
+			margin-right: 43px;
+
+			&:nth-of-type(n+4) { // change to slider // temp version
+				margin-right: 0;
+			}
+
+			&:nth-of-type(n+5) { // change to slider // temp version
+				display: none;
+			}
+		}
+
+		@include not-hg {
+			//max-width: 170px;
+			margin-right: 20px;
+
+			&:nth-of-type(n+3) { // change to slider // temp version
+				margin-right: 0;
+			}
+
+			&:nth-of-type(n+4) { // change to slider // temp version
+				display: none;
+			}
+		}
+
+		@include not-lg {
+			//max-width: 170px;
+			margin-right: 20px;
+
+			&:nth-of-type(n+2) { // change to slider // temp version
+				margin-right: 0;
+			}
+
+			&:nth-of-type(n+3) { // change to slider // temp version
+				display: none;
+			}
+		}
 	}
 }
 
@@ -983,6 +1032,10 @@ body {
 	justify-content: center;
 	font-size: $font-size--l;
 
+	@include not-hg {
+		display: none;
+	}
+
 	.back_icon {
 		width: 102px;
 		height: 24px;
@@ -995,7 +1048,11 @@ body {
 }
 
 .--ext_padding {
-	padding: 13px 78px;
+	padding: 14px 77px;
+
+	@include not-hg {
+		padding: 14px 100px;
+	}
 }
 
 /* ---------- ABOUT ---------- */
