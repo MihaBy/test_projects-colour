@@ -773,7 +773,7 @@ body {
 
 		margin-bottom: 25px;
 		font-size: $font-size--h4;
-		text-align: justify;
+		
 	}
 
 	h2 {
@@ -785,7 +785,7 @@ body {
 
 	p {
 		@extend %Montserrat__m;
-
+		text-align: justify;
 		margin-bottom: 24px;
 		font-size: $font-size--l;
 
@@ -905,4 +905,77 @@ body {
 
 .--ext_padding {
 	padding: 13px 78px;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+.about__wrapper {
+	margin-top: 153px;
+	margin-right: 26px;
+	margin-left: 26px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 70px;
+	h2 {
+		@extend %Cormorant__b;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+		font-size: $font-size--h2;
+	}
+	p { 
+		@extend %Montserrat__m;
+		text-align: justify;
+		margin-bottom: 24px;
+		font-size: $font-size--l;
+
+		&:first-of-type {
+			margin-bottom: 48px;
+		}
+
+		&:last-of-type {
+			margin-bottom: 20px;
+		}
+	}
+	h4 {
+		@extend %Montserrat__b;
+
+		margin-bottom: 25px;
+		font-size: $font-size--h4;
+		}
+}
+
+.about__img {
+	width: 30%;
+	background-color: $colors__primary;
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+	img{
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+}
+.about__content{
+	margin-left: 32px;
+	width: calc(70% - 32px);
+}
+.about__second__img{
+	background-color: $colors__primary;
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 10vh;
+	img{
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	width: 100%;
 }
