@@ -1350,6 +1350,10 @@ body {
 		margin-bottom: 90px;
 	}
 
+	@include not-lg {
+		margin-bottom: 24px;
+	}
+
 	img {
 		display: block;
 		width: 100%;

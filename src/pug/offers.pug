@@ -1,0 +1,17 @@
+extends templates/layout_special-offers
+
+block main
+    .hero(data-height="hero")
+        h1 
+            | Special Offers
+            wbr
+            | Offers
+        p Find the perfect artwork with discounts of from 5% off, all the way through to 40% off. All these fabulous works of art are currently discounted for a limited period.
+    block quote 
+        include ./includes/quote_section
+    section.main_portfolio
+        .container-h
+            block portfolio_grid 
+                include includes/main_portfolio_grid
+    block quote 
+        include ./includes/quote_secondary_section

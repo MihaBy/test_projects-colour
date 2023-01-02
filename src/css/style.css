@@ -1940,6 +1940,12 @@ body {
   }
 }
 
+@media only screen and (max-width: 809px) {
+  .delivery_map {
+    margin-bottom: 24px;
+  }
+}
+
 .delivery_map img {
   display: block;
   width: 100%;
