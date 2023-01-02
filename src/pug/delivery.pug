@@ -1,0 +1,18 @@
+extends templates/layout_delivery
+
+block main
+    .container-h
+        .delivery_content_wrapper
+            .delivery_content 
+                h4 Доставка
+                p Black Square (also known as The Black Square or Malevich's Black Square) is an iconic painting by Kazimir Malevich. The first version was done in 1915. Malevich made four variants of which the last is thought to have been painted during the late 1920s or early 1930s. Black Square was first shown in The Last Futurist Exhibition 0,10 in 1915. The work is frequently invoked by critics, historians, curators, and artists as the "zero point of painting", referring to the painting's historical significance and paraphrasing Malevich.
+            .delivery_content
+                h4 Доставка и упаковка
+                ul 
+                    each item in delivery_counteries 
+                        +delivery_price(item)
+            .delivery_content
+                h4 Возврат
+                p Don't worry, if your purchase your artwork and then decide you don't like it, you feel the artwork isn't quite right or you just no longer want it, no problem! We offer a 14 day no quibble returns policy on all our artworks.
+            .delivery_map 
+                img(src="https://via.placeholder.com/1200x546", alt="")

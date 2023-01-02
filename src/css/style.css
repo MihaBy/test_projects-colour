@@ -216,13 +216,13 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
   font-weight: 700;
 }
 
-.main_portfolio h2, .art-division h3, .art-division h4, .about__wrapper h4 {
+.main_portfolio h2, .art-division h3, .art-division h4, .about__wrapper h4, .delivery_content_wrapper h4 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 700;
 }
 
-.nav .nav_link, .portfolio_item__descripton div h3, .portfolio_item_btn, .art-division a, .art-division p, .breadcrumb, .about__wrapper p {
+.nav .nav_link, .portfolio_item__descripton div h3, .portfolio_item_btn, .art-division a, .art-division p, .breadcrumb, .about__wrapper p, .delivery_content_wrapper p, .delivery_content_wrapper ul {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -1784,5 +1784,167 @@ body {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* ---------- DELIVERY ---------- */
+.delivery_content_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 233px;
+  margin-right: 26px;
+  margin-left: 26px;
+  line-height: 1.2;
+}
+
+@media only screen and (max-width: 1919px) {
+  .delivery_content_wrapper {
+    margin-top: 196px;
+  }
+}
+
+@media only screen and (max-width: 1365px) {
+  .delivery_content_wrapper {
+    margin-top: 174px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  .delivery_content_wrapper {
+    margin-top: 174px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.delivery_content_wrapper h4 {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 1919px) {
+  .delivery_content_wrapper h4 {
+    margin-bottom: 24px;
+  }
+}
+
+.delivery_content_wrapper p {
+  margin-bottom: 24px;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.delivery_content_wrapper ul {
+  padding: 0;
+  margin-bottom: 24px;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.delivery_content_wrapper ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media only screen and (max-width: 809px) {
+  .delivery_content_wrapper ul li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 1em;
+  }
+  .delivery_content_wrapper ul li span:first-of-type {
+    font-weight: 700;
+  }
+}
+
+.delivery_content {
+  margin-bottom: 46px;
+  --gap: 50px;
+}
+
+@media only screen and (max-width: 1919px) {
+  .delivery_content {
+    margin-bottom: 24px;
+  }
+}
+
+.delivery_content:nth-of-type(2) {
+  width: 38%;
+  max-width: 384px;
+  margin-right: var(--gap);
+}
+
+@media only screen and (max-width: 1365px) {
+  .delivery_content:nth-of-type(2) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.delivery_content:nth-of-type(3) {
+  width: calc(62% - var(--gap));
+  max-width: 698px;
+}
+
+@media only screen and (max-width: 1365px) {
+  .delivery_content:nth-of-type(3) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.delivery_map {
+  width: 100%;
+  margin-top: 85px;
+  margin-bottom: 175px;
+}
+
+@media only screen and (max-width: 1919px) {
+  .delivery_map {
+    margin-top: 48px;
+  }
+}
+
+@media only screen and (max-width: 1365px) {
+  .delivery_map {
+    margin-bottom: 90px;
+  }
+}
+
+.delivery_map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 /*# sourceMappingURL=style.css.map */

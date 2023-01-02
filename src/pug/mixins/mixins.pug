@@ -11,4 +11,9 @@ mixin portfolio_item(item, img_path)
                 p size 24х50 mm
             a.portfolio_item_btn(href="/") see more
 
+mixin delivery_price(item)
+    li 
+        span #{item.country}
+        span #{item.price_delivery}
+
 

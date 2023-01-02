@@ -1226,3 +1226,135 @@ body {
 		height: auto;
 	}
 }
+
+
+/* ---------- DELIVERY ---------- */
+.delivery_content_wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-top: 233px;
+	margin-right: 26px;
+	//margin-bottom: 64px;
+	margin-left: 26px;
+	line-height: $line-height--custom;
+
+	@include not-xhg {
+		margin-top: 196px;
+	}
+
+	@include not-hg {
+		margin-top: 174px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	@include not-lg {
+		margin-top: 174px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	h4 {
+		@extend %Montserrat__b;
+
+		margin-bottom: 16px;
+		font-size: $font-size--h4;
+
+		@include not-xhg {
+			margin-bottom: 24px;
+		}
+	}
+
+	p {
+		@extend %Montserrat__m;
+
+		margin-bottom: 24px;
+		font-size: $font-size--l;
+		text-align: justify;
+	}
+
+	ul {
+		@extend %Montserrat__m;
+
+		padding: 0;
+		margin-bottom: 24px;
+		font-size: $font-size--l;
+		text-align: justify;
+
+		li {
+			//display: block;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-items: flex-start;
+			justify-content: space-between;
+
+			@include not-lg {
+				flex-direction: column;
+				margin-bottom: 1em;
+
+				span:first-of-type {
+					font-weight: $font-weight__bold;
+				}
+			}
+		}
+	}
+}
+
+.delivery_content {
+	margin-bottom: 46px;
+
+	--gap: 50px;
+
+	@include not-xhg {
+		margin-bottom: 24px;
+	}
+
+	&:nth-of-type(2) {
+		width: 38%;
+		max-width: 384px;
+		margin-right: var(--gap);
+
+		@include not-hg {
+			width: 100%;
+			margin-right: 0;
+		}
+	}
+
+	&:nth-of-type(3) {
+		width: calc(62% - var(--gap));
+		max-width: 698px;
+
+		@include not-hg {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+.delivery_map {
+	//display: flex;
+	width: 100%;
+	//justify-content: center;
+	margin-top: 85px;
+	margin-bottom: 175px;
+
+	@include not-xhg {
+		margin-top: 48px;
+	}
+
+	@include not-hg {
+		margin-bottom: 90px;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
