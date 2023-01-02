@@ -204,7 +204,7 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
   }
 */
 .header__logo h2, .hero h1, .footer__inner h1,
-.footer__inner h2, .art-division h2, .about__wrapper h2 {
+.footer__inner h2, .art-division h2, .about__wrapper h2, .offers--hero h1 {
   font-family: "Cormorant", serif;
   font-style: normal;
   font-weight: 700;
@@ -229,7 +229,7 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
 }
 
 .portfolio_item__descripton div p, .footer__inner p,
-.footer__inner a {
+.footer__inner a, .offers--hero p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -1940,11 +1940,85 @@ body {
   }
 }
 
+@media only screen and (max-width: 809px) {
+  .delivery_map {
+    margin-bottom: 24px;
+  }
+}
+
 .delivery_map img {
   display: block;
   width: 100%;
   height: auto;
   margin-right: auto;
   margin-left: auto;
+}
+
+/* OFFERS */
+.offers--hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100vh - var(--height_quote__l));
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-blend-mode: hard-light;
+  background-color: #1c2135;
+  background-image: url("https://via.placeholder.com/1920x1028");
+  background-position: 50% 50%;
+  background-size: cover;
+  color: #fff;
+}
+
+@media only screen and (max-width: 1365px) {
+  .offers--hero {
+    height: calc(100vh - var(--height_quote__s));
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  .offers--hero {
+    height: calc(100vh - var(--height_quote__s));
+    background-size: initial;
+    text-align: center;
+  }
+}
+
+.offers--hero h1 {
+  font-size: 160px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1919px) {
+  .offers--hero h1 {
+    font-size: 128px;
+  }
+}
+
+@media only screen and (max-width: 1365px) {
+  .offers--hero h1 {
+    font-size: 96px;
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  .offers--hero h1 {
+    margin-bottom: 9px;
+    font-size: 110px;
+  }
+}
+
+.offers--hero p {
+  max-width: 954px;
+  margin-bottom: 24px;
+  font-size: 20px;
 }
 /*# sourceMappingURL=style.css.map */

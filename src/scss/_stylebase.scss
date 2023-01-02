@@ -1350,11 +1350,74 @@ body {
 		margin-bottom: 90px;
 	}
 
+	@include not-lg {
+		margin-bottom: 24px;
+	}
+
 	img {
 		display: block;
 		width: 100%;
 		height: auto;
 		margin-right: auto;
 		margin-left: auto;
+	}
+}
+
+
+/* OFFERS */
+
+.offers--hero {
+	display: flex;
+	height: calc(100vh - var(--height_quote__l));
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-blend-mode: hard-light;
+	background-color: $colors__primary;
+	//background-image: url("../../static/img/main/hero_bg.jpg");
+	background-image: url("https://via.placeholder.com/1920x1028");
+	background-position: 50% 50%;
+	background-size: cover;
+	color: $colors__secondary;
+
+	@include not-hg {
+		height: calc(100vh - var(--height_quote__s));
+	}
+
+	@include not-lg {
+		height: calc(100vh - var(--height_quote__s));
+		//align-items: flex-end;
+		//justify-content: flex-end;
+		background-size: initial;
+		text-align: center;
+	}
+
+	h1 {
+		@extend %Cormorant__b;
+
+		font-size: $font-size--h1;
+		text-transform: uppercase;
+
+		@include not-xhg {
+			font-size: $font-size--h1--sm;
+		}
+
+		@include not-hg {
+			font-size: $font-size--h1--xs;
+		}
+
+		@include not-lg {
+			//height: calc(100vh - var(--height_quote__s));
+			margin-bottom: 9px;
+			font-size: $font-size--h1--s;
+		}
+	}
+
+	p {
+		@extend %Montserrat__r;
+
+		max-width: 954px;
+		margin-bottom: 24px;
+		font-size: $font-size--l;
 	}
 }
