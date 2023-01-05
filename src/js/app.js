@@ -52,7 +52,27 @@ $(document).ready(
 
 
 
+        //          SLICK SLIDER 
+        let slickSliderClassName = '.slick-slider';//.slider-for
+        let slickSliderClassNameNavigation = '.slider-nav';
+        $(slickSliderClassName).slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: slickSliderClassNameNavigation,
+          });
 
+          $(slickSliderClassNameNavigation).slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            asNavFor: slickSliderClassName,
+            dots: false,
+            centerMode: true,
+            focusOnSelect: true,
+            arrows: true,
+            infinite: true,
+          });
 
 });
 

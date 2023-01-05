@@ -1238,17 +1238,23 @@ body {
   max-width: 533px;
 }
 
+.art-item__img-section .art-img_slider .slider-nav .slick-slide {
+  max-width: 95px;
+  max-height: 95px;
+  margin-right: 10px;
+}
+
+.art-item__img-section .art-img_slider .slider-nav .slick-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .art-item__img-section .art-img_slider .art-img_slider__main-img {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #1c2135;
-}
-
-.art-item__img-section .art-img_slider .art-img_slider__main-img img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .art-item__content {
