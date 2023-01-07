@@ -16,4 +16,14 @@ mixin delivery_price(item)
         span #{item.country}
         span #{item.price_delivery}
 
+mixin list_img(item)
+    div 
+        a(href=item.link, target="_blank")
+            img(src=item.link)
+
+
+mixin list_img_nav(item)
+    div 
+        img(src=item.link)
+
 

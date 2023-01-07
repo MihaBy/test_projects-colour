@@ -16,8 +16,12 @@
 # Игнорировать все .txt файлы в каталоге doc/
 #doc/**/*.txt
 
-static/
-
+static/img/*.png
+static/img/*.svg
+static/img/*.jpeg
+static/img/*.jpg
+static/img/old/
+static/img/main/
 !static/img/svg
 
 pixel-glass/

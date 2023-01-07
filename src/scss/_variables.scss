@@ -78,6 +78,12 @@ $divider_font_xs: $divider_font_sm * 1.2;
 // Breackpoints and containers
 //////////////////////////////////////////////////////
 
+:root {
+	--breakpoints__hg: 1920px;
+	--breakpoints__lg: 1366px;
+	--breakpoints__md: 810px;
+	--breakpoints__sm: 361px;
+}
 // Minimum Supported Width
 $breakpoints__min:                 320px;//not use
 

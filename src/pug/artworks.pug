@@ -10,33 +10,11 @@ block main
                 .art-item__img-section 
                     .art-img_slider
                         .slick-slider
-                            div 
-                                img(src="https://via.placeholder.com/532x720/fff176")
-                            div 
-                                img(src="https://via.placeholder.com/532x720/ffd54f")
-                            div 
-                                img(src="https://via.placeholder.com/532x720/ffb74d")
-                            div 
-                                img(src="https://via.placeholder.com/532x720/ff8a65") 
-                            div 
-                                img(src="https://via.placeholder.com/532x720/dce775")
-                            div 
-                                img(src="https://via.placeholder.com/532x720/aed581")  
+                            each item in list_img_of_item 
+                                +list_img(item)
                         .slider-nav
-                            div 
-                                img(src="https://via.placeholder.com/532x720/fff176")
-                            div 
-                                img(src="https://via.placeholder.com/532x720/ffd54f")
-                            div 
-                                img(src="https://via.placeholder.com/532x720/ffb74d")
-                            div 
-                                img(src="https://via.placeholder.com/532x720/ff8a65") 
-                            div 
-                                img(src="https://via.placeholder.com/532x720/dce775")
-                            div 
-                                img(src="https://via.placeholder.com/532x720/aed581")        
-                    //    .art-img_slider__main-img
-                            
+                            each item in list_img_of_item 
+                                +list_img_nav(item)
                 .art-item__content.container--special-restore
                     h2
                         q Black square
