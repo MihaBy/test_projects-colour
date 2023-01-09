@@ -66,12 +66,13 @@ $(document).ready(
             fade: true,
             centerMode: true,
             asNavFor: slickSliderClassNameNavigation,
+            swipeToSlide: true,
             responsive: [
                 {
                     breakpoint: breakpoints__lg,
                     settings: {
                     arrows: true,
-                    
+                    swipeToSlide: true,
                     }
                   },
             ]
@@ -87,8 +88,53 @@ $(document).ready(
             arrows: true,
             infinite: true,
             swipeToSlide: true,
+            responsive: [
+                {
+                    breakpoint: breakpoints__lg,
+                    settings: {
+                        //slick :destroy,
+                        arrows: false,
+                    }
+                  },
+            ]
           });
+          $('.slick-slider .slick-active').on('click', function(){
+            console.log('click');
+            console.log(this);
+/*
+            const node = document.createElement("div");
+            node.classList.add("test");
+            this.classList.add("test__inner-slide")
+            document.body.appendChild(node);
+            node.appendChild(this);
+*/
+            //console.log($('.slick-slider'));
+            $('.slick-slider')[0].classList.add("test");
+            //this.classList.add('.slick-active');
+           $(slickSliderClassName).slick('reInit');
+           $(slickSliderClassName).slick('setPosition');
+          
 
+            
+
+        });
+        
 });
+/*
+$('.your-element').on('swipe', function(event, slick, direction){
+    console.log(direction);
+    // left
+  });
+  slick-slider
+  slick-slide slick-current slick-active*/
 
-
+/*
+  $('.slick-slider .slick-active').on('click', function(){
+      console.log('click');
+  });*/
+/*
+const node = document.createElement("div");
+node.classList.add("test");
+node.appendChild(this);
+document.body.appendChild(node);
+*/

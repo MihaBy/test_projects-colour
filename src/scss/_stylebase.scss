@@ -938,7 +938,8 @@ body {
 
 		.slick-slider {
 			margin-bottom: 20px;
-			background-color: $colors__primary;
+			//background-color: $colors__primary;
+			background-color: transparent;
 
 			.slick-list {/*
 				display: flex;
@@ -965,7 +966,8 @@ body {
 					align-content: center;
 					align-items: center;
 					justify-content: center;
-					padding: 0 48px;
+					//padding: 0 48px;
+					padding: 0;
 					background-color: $colors__primary;
 
 					@include not-xhg {
@@ -989,6 +991,10 @@ body {
 			position: relative;
 			margin: 0 40px;
 			background-color: transparent;
+
+			@include not-hg {
+				display: none;
+			}
 
 			.slick-track {
 				display: flex;
@@ -1059,7 +1065,6 @@ body {
 				//content: url("data:image/svg+xml,%3Csvg width='34' height='61' viewBox='0 0 34 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L30.5 30.5L2 59' stroke='#1C2135' stroke-width='4'/%3E %3C/svg%3E");
 				content: url("../../static/img/svg/svg_slide_next_icon.svg");
 
-
 				@include not-hg {
 					content: url("../../static/img/svg/svg_slide_next_icon__sm.svg");
 				}
@@ -1072,7 +1077,6 @@ body {
 			&::before {
 				content: '←';
 				content: url("../../static/img/svg/svg_slide_prew_icon.svg");
-
 
 				@include not-hg {
 					content: url("../../static/img/svg/svg_slide_prew_icon__sm.svg");
@@ -1596,5 +1600,33 @@ body {
 			width: 80%;
 			max-width: 480px;
 		}
+	}
+}
+
+.test {
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	//display: flex;
+	//width: 100vw;
+	height: 100vh;
+	//flex-direction: column;
+	//align-items: center;
+	//justify-content: center;
+	background-color: rgb(255, 0, 0);
+}
+
+.test__inner-slide {
+	display: block;
+	width: 100%;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0 auto;
 	}
 }
