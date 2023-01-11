@@ -44,7 +44,11 @@ block main
 
             .rand-product-list.container--special-restore
                 h4 Більше товарів для вибору
-                .recent-product-list__inner 
+                .slick-slider--more-items
+                    each item in list_img_more_div 
+                        +list_img(item)
+
+                //        
                     .product-preview__item 
                         img(src="https://via.placeholder.com/222x287")
                     .product-preview__item 

@@ -55,6 +55,7 @@ $(document).ready(
         //          SLICK SLIDER 
         let slickSliderClassName = '.slick-slider';//.slider-for
         let slickSliderClassNameNavigation = '.slider-nav';
+        let slickSlider__moreItems = '.slick-slider--more-items';
         let breakpoints__hg = 1920,
             breakpoints__lg = 1366,
             breakpoints__md = 810,
@@ -109,8 +110,37 @@ $(document).ready(
           ]
         }
 
+        let slickData__moreItems = {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: true,
+          fade: true,
+          //centerMode: true,
+          //asNavFor: navSlider,
+          swipeToSlide: true,
+          //initialSlide: 0,
+          /*responsive: [
+            {
+                  breakpoint: breakpoints__lg,
+                  settings: {
+                  slidesToShow: 3,
+    
+                  }
+            },
+            {
+              breakpoint: breakpoints__md,
+              settings: {
+              slidesToShow: 2,
+              }
+        },
+          ]*/
+        }
+
+
         if (typeof mainSlider !== 'undefined') { $(mainSlider).slick(slickDataMain);}
         if (typeof navSlider !== 'undefined') { $(navSlider).slick(slickDataNav);}
+
+        if (typeof slickSlider__moreItems !== 'undefined') { $(slickSlider__moreItems).slick(slickData__moreItems);}
 
           //Events on click 
             //create new dom element
