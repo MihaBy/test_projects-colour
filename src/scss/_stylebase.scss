@@ -1,5 +1,5 @@
 body {
-	height: 100vh;
+	//height: 100vh;
 	//width: 100vw;
 	//height: 100vh;
 	background-color: $colors__secondary;
@@ -909,7 +909,6 @@ body {
 		margin-top: 0;
 		margin-bottom: 14px;
 		background-color: $colors__primary;
-		background-color: #233066; //delete
 		justify-items: center;
 	}
 
@@ -1107,7 +1106,49 @@ body {
 
 	.art-img_slider.--full_width--centered {
 		max-width: initial;
+		max-height: 100vh;
 		backdrop-filter: blur(10px);
+
+		//start copy
+
+		.slick-slider {
+			max-height: 100vh;
+			margin-bottom: 20px;
+			//background-color: $colors__primary;
+			background-color: transparent;
+
+			.slick-list {/*
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				align-content: center;
+				align-items: center;
+				justify-content: center; */
+				.slick-track {
+
+				}
+
+				.slick-slide {
+					height: 100vh;
+					max-height: 100vh;
+
+					@include not-xhg {
+						@include not-hg {
+
+						}
+
+						img {
+							width: 100%;
+							height: 100%;
+							height: inherit;
+							object-fit: contain;
+						}
+					}
+				}
+			}
+		}
+
+		//end copy
 
 		@include not-hg {
 			width: 100%;
@@ -1147,7 +1188,7 @@ body {
 	}
 
 	.--full_width--centered {
-		position: absolute;
+		position: fixed;
 		z-index: 1000;
 		top: 0;
 		right: 0;

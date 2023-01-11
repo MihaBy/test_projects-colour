@@ -123,7 +123,7 @@ $(document).ready(
               if (sliderWrapper.classList.contains(sliderCssReposition)) {
 
                 slickCurrentSlideNumber = $(mainSlider).slick('slickCurrentSlide');
-
+                document.body.style.overflow = 'visible';
                 $(mainSlider).slick('unslick');
                 $(navSlider).slick('unslick');
                 sliderWrapper.classList.remove(sliderCssReposition);
@@ -154,7 +154,7 @@ $(document).ready(
               else if (sliderWrapper.classList.contains(sliderCssReposition) == false ){
                 
                 slickCurrentSlideNumber = $(mainSlider).slick('slickCurrentSlide');
-
+                document.body.style.overflow = 'hidden';
                 $(mainSlider).slick('unslick');
                 $(navSlider).slick('unslick');
                 sliderWrapper.classList.add(sliderCssReposition);
@@ -169,7 +169,7 @@ $(document).ready(
                   initialSlide: slickCurrentSlideNumber,
                 });
                 
-                //$(navSlider).slick(slickDataNav);
+                $(navSlider).slick(slickDataNav);
                 
               }
               else console.log('if not work');
