@@ -67,9 +67,6 @@ $(document).ready(
         let sliderFixedWrapper;
         let slickCurrentSlideNumber;
 
-        
-
-
         let slickDataMain = {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -111,14 +108,9 @@ $(document).ready(
             },
           ]
         }
-        //console.log(typeof mainSlider);console.log('mainSlider');//test
+
         if (typeof mainSlider !== 'undefined') { $(mainSlider).slick(slickDataMain);}
         if (typeof navSlider !== 'undefined') { $(navSlider).slick(slickDataNav);}
-        //$(mainSlider).slick(slickDataMain);
-
-
-        //$(navSlider).slick(slickDataNav);
-
 
           //Events on click 
             //create new dom element
@@ -177,7 +169,7 @@ $(document).ready(
                   initialSlide: slickCurrentSlideNumber,
                 });
                 
-                $(navSlider).slick(slickDataNav);
+                //$(navSlider).slick(slickDataNav);
                 
               }
               else console.log('if not work');

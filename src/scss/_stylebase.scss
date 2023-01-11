@@ -1107,6 +1107,7 @@ body {
 
 	.art-img_slider.--full_width--centered {
 		max-width: initial;
+		backdrop-filter: blur(10px);
 
 		@include not-hg {
 			width: 100%;
@@ -1117,11 +1118,31 @@ body {
 		}
 
 		.slick-next {
-			right: 0;
+			right: 40px;
+
+			@include not-hg { right: 0; }
+
+			@include not-lg { right: 0; }
+
+			&::before {
+				content: url("../../static/img/svg/svg_slide_next_icon__sm.svg");
+			}
 		}
 
 		.slick-prev {
-			left: 0;
+			left: 40px;
+
+			@include not-hg { left: 0; }
+
+			@include not-lg { left: 0; }
+
+			&::before {
+				content: url("../../static/img/svg/svg_slide_prew_icon__sm.svg");
+			}
+		}
+
+		.slider-nav#nav-slider {
+			display: none;
 		}
 	}
 
