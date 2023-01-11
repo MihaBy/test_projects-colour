@@ -65,47 +65,50 @@ $(document).ready(
         let sliderCssReposition = '--full_width--centered';
         let sliderWrapper = document.getElementById('item-slider');
         let sliderFixedWrapper;
+        
 
-        $(mainSlider).slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            centerMode: true,
-            asNavFor: navSlider,
-            swipeToSlide: true,
-            responsive: [
-                {
-                    breakpoint: breakpoints__lg,
-                    settings: {
-                    arrows: true,
-                    swipeToSlide: true,
-                    }
-                  },
-            ]
-          });
+        let slickDataMain = {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          fade: true,
+          centerMode: true,
+          asNavFor: navSlider,
+          swipeToSlide: true,
+          responsive: [
+              {
+                  breakpoint: breakpoints__lg,
+                  settings: {
+                  arrows: true,
+                  swipeToSlide: true,
+                  }
+                },
+          ]
+        }
+        let slickDataNav = {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          asNavFor: mainSlider,
+          dots: false,
+          centerMode: true,
+          focusOnSelect: true,
+          arrows: true,
+          infinite: true,
+          swipeToSlide: true,
+          responsive: [
+              {
+                  breakpoint: breakpoints__lg,
+                  settings: {
+                      //slick :destroy,
+                      arrows: false,
+                  }
+                },
+          ]
+        }
+        $(mainSlider).slick(slickDataMain);
 
 
-            $(navSlider).slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            asNavFor: mainSlider,
-            dots: false,
-            centerMode: true,
-            focusOnSelect: true,
-            arrows: true,
-            infinite: true,
-            swipeToSlide: true,
-            responsive: [
-                {
-                    breakpoint: breakpoints__lg,
-                    settings: {
-                        //slick :destroy,
-                        arrows: false,
-                    }
-                  },
-            ]
-          });
+        $(navSlider).slick(slickDataNav);
 
 
           //Events on click 
@@ -122,47 +125,10 @@ $(document).ready(
                 $(mainSlider).slick('unslick');
                 $(navSlider).slick('unslick');
                 sliderWrapper.classList.remove(sliderCssReposition);
-                $(mainSlider).slick({
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  arrows: false,
-                  fade: true,
-                  centerMode: true,
-                  asNavFor: navSlider,
-                  swipeToSlide: true,
-                  initialSlide: currentSlide,
-                  responsive: [
-                      {
-                          breakpoint: breakpoints__lg,
-                          settings: {
-                          arrows: true,
-                          swipeToSlide: true,
-                          }
-                        },
-                  ]
-                });
+                $(mainSlider).slick(slickDataMain);
                 
-                $(navSlider).slick({
-                  slidesToShow: 4,
-                  slidesToScroll: 1,
-                  asNavFor: mainSlider,
-                  dots: false,
-                  centerMode: true,
-                  focusOnSelect: true,
-                  arrows: true,
-                  infinite: true,
-                  swipeToSlide: true,
-                  initialSlide: currentSlide,
-                  responsive: [
-                      {
-                          breakpoint: breakpoints__lg,
-                          settings: {
-                              //slick :destroy,
-                              arrows: false,
-                          }
-                        },
-                  ]
-                });
+                $(navSlider).slick(slickDataNav);
+                
                 
               }
               else if (sliderWrapper.classList.contains(sliderCssReposition) == false ){
@@ -170,47 +136,9 @@ $(document).ready(
                 $(mainSlider).slick('unslick');
                 $(navSlider).slick('unslick');
                 sliderWrapper.classList.add(sliderCssReposition);
-                $(mainSlider).slick({
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  arrows: false,
-                  fade: true,
-                  centerMode: true,
-                  asNavFor: navSlider,
-                  swipeToSlide: true,
-                  initialSlide: currentSlide,
-                  responsive: [
-                      {
-                          breakpoint: breakpoints__lg,
-                          settings: {
-                          arrows: true,
-                          swipeToSlide: true,
-                          }
-                        },
-                  ]
-                });
+                $(mainSlider).slick(slickDataMain);
                 
-                $(navSlider).slick({
-                  slidesToShow: 4,
-                  slidesToScroll: 1,
-                  asNavFor: mainSlider,
-                  dots: false,
-                  centerMode: true,
-                  focusOnSelect: true,
-                  arrows: true,
-                  infinite: true,
-                  swipeToSlide: true,
-                  initialSlide: currentSlide,
-                  responsive: [
-                      {
-                          breakpoint: breakpoints__lg,
-                          settings: {
-                              //slick :destroy,
-                              arrows: false,
-                          }
-                        },
-                  ]
-                });
+                $(navSlider).slick(slickDataNav);
                 
               }
               else console.log('if not work');
