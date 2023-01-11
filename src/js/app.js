@@ -65,8 +65,38 @@ $(document).ready(
         let sliderCssReposition = '--full_width--centered';
         let sliderWrapper = document.getElementById('item-slider');
         let sliderFixedWrapper;
+        let slickCurrentSlideNumber;
+        function slickCurrentSlide() {
+           let  number = slickCurrentSlideNumber;
+            console.log (number);
+            console.log ('number');
+           if (number !=null && typeof(number) === number) {return number;}
+           else return 0;
+        } 
         
-
+        function slickDataMain() {
+          return {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            centerMode: true,
+            asNavFor: navSlider,
+            swipeToSlide: true,
+            initialSlide: slickCurrentSlide(),
+            responsive: [
+              {
+                    breakpoint: breakpoints__lg,
+                    settings: {
+                    arrows: true,
+                    swipeToSlide: true,
+                    }
+              },
+            ]
+          }
+        }
+        slickDataMain();
+/*
         let slickDataMain = {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -75,16 +105,42 @@ $(document).ready(
           centerMode: true,
           asNavFor: navSlider,
           swipeToSlide: true,
+          initialSlide: slickCurrentSlide(),
           responsive: [
-              {
+            {
                   breakpoint: breakpoints__lg,
                   settings: {
                   arrows: true,
                   swipeToSlide: true,
                   }
-                },
+            },
           ]
         }
+*/
+        function slickDataMainFullsize() {
+          return {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            centerMode: true,
+            asNavFor: navSlider,
+            swipeToSlide: true,
+            initialSlide: slickCurrentSlide(),
+          }
+        }
+
+      /*  let slickDataMainFullsize = {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          fade: true,
+          centerMode: true,
+          asNavFor: navSlider,
+          swipeToSlide: true,
+          initialSlide: slickCurrentSlide(),
+        }*/
+
         let slickDataNav = {
           slidesToShow: 4,
           slidesToScroll: 1,
@@ -95,14 +151,15 @@ $(document).ready(
           arrows: true,
           infinite: true,
           swipeToSlide: true,
+          //initialSlide: slickCurrentSlide,
           responsive: [
-              {
+            {
                   breakpoint: breakpoints__lg,
                   settings: {
                       //slick :destroy,
                       arrows: false,
                   }
-                },
+            },
           ]
         }
         $(mainSlider).slick(slickDataMain);
@@ -119,24 +176,35 @@ $(document).ready(
           $('#main-slider .slick-slide ').on('click', function() {
             if (this.classList.contains('slick-active')) {
               //mainSlider.toggleClass(sliderCssReposition);
-            
+
+             
+              slickCurrentSlideNumber = $(mainSlider).slick('slickCurrentSlide');
+              //slickDataMainFullsize = slickDataMainFullsize;
+              //slickDataMain = slickDataMain;
+              //console.log(typeof(slickCurrentSlide));
+              //console.log(slickCurrentSlide + "_ slickCurrentSlide");
+              //console.log(slickDataMainFullsize);
+              //console.log(slickDataMain);
+              slickCurrentSlide(); //test
               if (sliderWrapper.classList.contains(sliderCssReposition)) {
-                let currentSlide = $(mainSlider).slick('slickCurrentSlide');
+                
+
                 $(mainSlider).slick('unslick');
                 $(navSlider).slick('unslick');
                 sliderWrapper.classList.remove(sliderCssReposition);
-                $(mainSlider).slick(slickDataMain);
+                $(mainSlider).slick(slickDataMain());
                 
                 $(navSlider).slick(slickDataNav);
                 
                 
               }
               else if (sliderWrapper.classList.contains(sliderCssReposition) == false ){
-                let currentSlide = $(mainSlider).slick('slickCurrentSlide');
+                
+                
                 $(mainSlider).slick('unslick');
                 $(navSlider).slick('unslick');
                 sliderWrapper.classList.add(sliderCssReposition);
-                $(mainSlider).slick(slickDataMain);
+                $(mainSlider).slick(slickDataMainFullsize());
                 
                 $(navSlider).slick(slickDataNav);
                 

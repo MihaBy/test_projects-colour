@@ -1636,7 +1636,7 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  background-color: rgba(105, 105, 105, 0.425);
+  background-color: rgba(105, 105, 105, 0.9);
 }
 
 .art-item__content {
