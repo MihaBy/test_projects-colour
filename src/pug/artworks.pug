@@ -8,11 +8,11 @@ block main
                 a(href="/") black square
             .art-item
                 .art-item__img-section 
-                    .art-img_slider
-                        .slick-slider
+                    .art-img_slider#item-slider
+                        .slick-slider#main-slider
                             each item in list_img_of_item 
                                 +list_img(item)
-                        .slider-nav
+                        .slider-nav#nav-slider
                             each item in list_img_of_item 
                                 +list_img_nav(item)
                 .art-item__content.container--special-restore

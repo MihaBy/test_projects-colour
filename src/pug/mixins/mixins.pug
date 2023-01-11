@@ -18,8 +18,7 @@ mixin delivery_price(item)
 
 mixin list_img(item)
     div 
-        a(href=item.link, target="_blank")
-            img(src=item.link)
+        img(src=item.link)
 
 
 mixin list_img_nav(item)
@@ -27,3 +26,7 @@ mixin list_img_nav(item)
         img(src=item.link)
 
 
+mixin list_img--linked(item)
+    div 
+        a(href=item.link, target="_blank")
+            img(src=item.link)

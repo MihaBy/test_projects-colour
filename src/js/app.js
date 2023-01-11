@@ -59,13 +59,20 @@ $(document).ready(
             breakpoints__lg = 1366,
             breakpoints__md = 810,
             breakpoints__sm = 361;
-        $(slickSliderClassName).slick({
+
+        let mainSlider = $('#main-slider')[0];
+        let navSlider = $('#nav-slider')[0];
+        let sliderCssReposition = '--full_width--centered';
+        let sliderWrapper = document.getElementById('item-slider');
+        let sliderFixedWrapper;
+
+        $(mainSlider).slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
             fade: true,
             centerMode: true,
-            asNavFor: slickSliderClassNameNavigation,
+            asNavFor: navSlider,
             swipeToSlide: true,
             responsive: [
                 {
@@ -78,10 +85,11 @@ $(document).ready(
             ]
           });
 
-          $(slickSliderClassNameNavigation).slick({
+
+            $(navSlider).slick({
             slidesToShow: 4,
             slidesToScroll: 1,
-            asNavFor: slickSliderClassName,
+            asNavFor: mainSlider,
             dots: false,
             centerMode: true,
             focusOnSelect: true,
@@ -98,28 +106,168 @@ $(document).ready(
                   },
             ]
           });
-          $('.slick-slider .slick-active').on('click', function(){
-            console.log('click');
-            console.log(this);
-/*
-            const node = document.createElement("div");
-            node.classList.add("test");
-            this.classList.add("test__inner-slide")
-            document.body.appendChild(node);
-            node.appendChild(this);
-*/
-            //console.log($('.slick-slider'));
-            $('.slick-slider')[0].classList.add("test");
-            //this.classList.add('.slick-active');
-           $(slickSliderClassName).slick('reInit');
-           $(slickSliderClassName).slick('setPosition');
-          
 
+
+          //Events on click 
+            //create new dom element
+     
+
+
+          $('#main-slider .slick-slide ').on('click', function() {
+            if (this.classList.contains('slick-active')) {
+              //mainSlider.toggleClass(sliderCssReposition);
             
+              if (sliderWrapper.classList.contains(sliderCssReposition)) {
+                let currentSlide = $(mainSlider).slick('slickCurrentSlide');
+                $(mainSlider).slick('unslick');
+                $(navSlider).slick('unslick');
+                sliderWrapper.classList.remove(sliderCssReposition);
+                $(mainSlider).slick({
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrows: false,
+                  fade: true,
+                  centerMode: true,
+                  asNavFor: navSlider,
+                  swipeToSlide: true,
+                  initialSlide: currentSlide,
+                  responsive: [
+                      {
+                          breakpoint: breakpoints__lg,
+                          settings: {
+                          arrows: true,
+                          swipeToSlide: true,
+                          }
+                        },
+                  ]
+                });
+                
+                $(navSlider).slick({
+                  slidesToShow: 4,
+                  slidesToScroll: 1,
+                  asNavFor: mainSlider,
+                  dots: false,
+                  centerMode: true,
+                  focusOnSelect: true,
+                  arrows: true,
+                  infinite: true,
+                  swipeToSlide: true,
+                  initialSlide: currentSlide,
+                  responsive: [
+                      {
+                          breakpoint: breakpoints__lg,
+                          settings: {
+                              //slick :destroy,
+                              arrows: false,
+                          }
+                        },
+                  ]
+                });
+                
+              }
+              else if (sliderWrapper.classList.contains(sliderCssReposition) == false ){
+                let currentSlide = $(mainSlider).slick('slickCurrentSlide');
+                $(mainSlider).slick('unslick');
+                $(navSlider).slick('unslick');
+                sliderWrapper.classList.add(sliderCssReposition);
+                $(mainSlider).slick({
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrows: false,
+                  fade: true,
+                  centerMode: true,
+                  asNavFor: navSlider,
+                  swipeToSlide: true,
+                  initialSlide: currentSlide,
+                  responsive: [
+                      {
+                          breakpoint: breakpoints__lg,
+                          settings: {
+                          arrows: true,
+                          swipeToSlide: true,
+                          }
+                        },
+                  ]
+                });
+                
+                $(navSlider).slick({
+                  slidesToShow: 4,
+                  slidesToScroll: 1,
+                  asNavFor: mainSlider,
+                  dots: false,
+                  centerMode: true,
+                  focusOnSelect: true,
+                  arrows: true,
+                  infinite: true,
+                  swipeToSlide: true,
+                  initialSlide: currentSlide,
+                  responsive: [
+                      {
+                          breakpoint: breakpoints__lg,
+                          settings: {
+                              //slick :destroy,
+                              arrows: false,
+                          }
+                        },
+                  ]
+                });
+                
+              }
+              else console.log('if not work');
+              
+            }
 
+            else return false;
+          });
+
+
+          
+        /*
+          $('#main-slider .slick-slide ').on('click', function(){
+            //console.log('click');
+            console.log(this);
+            if (this.classList.contains('slick-active')) {
+              
+              let node;
+              //console.log(mainSlider.classList.contains(sliderCssReposition));
+            // console.log('mainSlider.classList.contains(sliderCssReposition)');
+              if (mainSlider.classList.contains(sliderCssReposition)) {
+                mainSlider.classList.remove(sliderCssReposition);
+                sliderWrapper.appendChild(mainSlider);
+              // $(slickSliderClassName).slick('reInit');
+              // $(slickSliderClassName).slick('setPosition');
+                //console.log(sliderFixedWrapper);
+                //node.classList.remove("test");
+                sliderFixedWrapper.remove();
+                console.log('remove full size');
+               // return $(slickSliderClassName).slick('reInit');
+              }
+              else if (mainSlider.classList.contains(sliderCssReposition) == false ){
+                mainSlider.classList.add(sliderCssReposition);
+                sliderFixedWrapper = document.createElement("div");
+                sliderFixedWrapper.classList.add("test");
+                //this.classList.add("test__inner-slide")
+                sliderFixedWrapper.appendChild(mainSlider);
+                document.body.appendChild(sliderFixedWrapper);
+                console.log('add full size');
+
+                //console.log($('.slick-slider'));
+                // $('.slick-slider')[0].classList.add("test");
+                //this.classList.add('.slick-active');
+                // console.log($('#main-slider')[0]);
+                // console.log('$(#main-slider)[0];');
+                //$('#main-slider').slick('reInit');
+                // $('#main-slider').slick('setPosition');
+              }
+              else console.log('if not work');
+            }
+            else return false;
         });
-        
+        */
 });
+
+
+
 /*
 $('.your-element').on('swipe', function(event, slick, direction){
     console.log(direction);
