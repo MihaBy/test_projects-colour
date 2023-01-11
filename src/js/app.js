@@ -66,37 +66,10 @@ $(document).ready(
         let sliderWrapper = document.getElementById('item-slider');
         let sliderFixedWrapper;
         let slickCurrentSlideNumber;
-        function slickCurrentSlide() {
-           let  number = slickCurrentSlideNumber;
-            console.log (number);
-            console.log ('number');
-           if (number !=null && typeof(number) === number) {return number;}
-           else return 0;
-        } 
+
         
-        function slickDataMain() {
-          return {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            centerMode: true,
-            asNavFor: navSlider,
-            swipeToSlide: true,
-            initialSlide: slickCurrentSlide(),
-            responsive: [
-              {
-                    breakpoint: breakpoints__lg,
-                    settings: {
-                    arrows: true,
-                    swipeToSlide: true,
-                    }
-              },
-            ]
-          }
-        }
-        slickDataMain();
-/*
+
+
         let slickDataMain = {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -105,7 +78,7 @@ $(document).ready(
           centerMode: true,
           asNavFor: navSlider,
           swipeToSlide: true,
-          initialSlide: slickCurrentSlide(),
+          initialSlide: 0,
           responsive: [
             {
                   breakpoint: breakpoints__lg,
@@ -116,30 +89,6 @@ $(document).ready(
             },
           ]
         }
-*/
-        function slickDataMainFullsize() {
-          return {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            centerMode: true,
-            asNavFor: navSlider,
-            swipeToSlide: true,
-            initialSlide: slickCurrentSlide(),
-          }
-        }
-
-      /*  let slickDataMainFullsize = {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          fade: true,
-          centerMode: true,
-          asNavFor: navSlider,
-          swipeToSlide: true,
-          initialSlide: slickCurrentSlide(),
-        }*/
 
         let slickDataNav = {
           slidesToShow: 4,
@@ -162,10 +111,13 @@ $(document).ready(
             },
           ]
         }
-        $(mainSlider).slick(slickDataMain);
+        //console.log(typeof mainSlider);console.log('mainSlider');//test
+        if (typeof mainSlider !== 'undefined') { $(mainSlider).slick(slickDataMain);}
+        if (typeof navSlider !== 'undefined') { $(navSlider).slick(slickDataNav);}
+        //$(mainSlider).slick(slickDataMain);
 
 
-        $(navSlider).slick(slickDataNav);
+        //$(navSlider).slick(slickDataNav);
 
 
           //Events on click 
@@ -175,24 +127,33 @@ $(document).ready(
 
           $('#main-slider .slick-slide ').on('click', function() {
             if (this.classList.contains('slick-active')) {
-              //mainSlider.toggleClass(sliderCssReposition);
 
-             
-              slickCurrentSlideNumber = $(mainSlider).slick('slickCurrentSlide');
-              //slickDataMainFullsize = slickDataMainFullsize;
-              //slickDataMain = slickDataMain;
-              //console.log(typeof(slickCurrentSlide));
-              //console.log(slickCurrentSlide + "_ slickCurrentSlide");
-              //console.log(slickDataMainFullsize);
-              //console.log(slickDataMain);
-              slickCurrentSlide(); //test
               if (sliderWrapper.classList.contains(sliderCssReposition)) {
-                
+
+                slickCurrentSlideNumber = $(mainSlider).slick('slickCurrentSlide');
 
                 $(mainSlider).slick('unslick');
                 $(navSlider).slick('unslick');
                 sliderWrapper.classList.remove(sliderCssReposition);
-                $(mainSlider).slick(slickDataMain());
+                $(mainSlider).slick({
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrows: false,
+                  fade: true,
+                  centerMode: true,
+                  asNavFor: navSlider,
+                  swipeToSlide: true,
+                  initialSlide: slickCurrentSlideNumber,
+                  responsive: [
+                    {
+                          breakpoint: breakpoints__lg,
+                          settings: {
+                          arrows: true,
+                          swipeToSlide: true,
+                          }
+                    },
+                  ]
+                });
                 
                 $(navSlider).slick(slickDataNav);
                 
@@ -200,11 +161,21 @@ $(document).ready(
               }
               else if (sliderWrapper.classList.contains(sliderCssReposition) == false ){
                 
-                
+                slickCurrentSlideNumber = $(mainSlider).slick('slickCurrentSlide');
+
                 $(mainSlider).slick('unslick');
                 $(navSlider).slick('unslick');
                 sliderWrapper.classList.add(sliderCssReposition);
-                $(mainSlider).slick(slickDataMainFullsize());
+                $(mainSlider).slick({
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrows: true,
+                  fade: true,
+                  centerMode: true,
+                  asNavFor: navSlider,
+                  swipeToSlide: true,
+                  initialSlide: slickCurrentSlideNumber,
+                });
                 
                 $(navSlider).slick(slickDataNav);
                 
