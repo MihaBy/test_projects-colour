@@ -111,19 +111,28 @@ $(document).ready(
         }
 
         let slickData__moreItems = {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
           arrows: true,
-          fade: true,
+          dots: false,
+          //fade: true,
           //centerMode: true,
           //asNavFor: navSlider,
           swipeToSlide: true,
           //initialSlide: 0,
-          /*responsive: [
+          responsive: [
+            {
+              breakpoint: breakpoints__hg,
+              settings: {
+              slidesToShow: 4,
+
+              }
+            },
             {
                   breakpoint: breakpoints__lg,
                   settings: {
                   slidesToShow: 3,
+                  
     
                   }
             },
@@ -131,9 +140,11 @@ $(document).ready(
               breakpoint: breakpoints__md,
               settings: {
               slidesToShow: 2,
+              
+              
               }
         },
-          ]*/
+          ]
         }
 
 
