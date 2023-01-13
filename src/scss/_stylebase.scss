@@ -213,18 +213,6 @@ body {
 	}
 }
 
-
-/*
-#svg_logo__l {
-	fill: $colors__svg-2;
-	transition: fill 0.4s ease-in-out;
-}
-
-#svg_logo__r {
-	fill: $colors__svg-1;
-	transition: fill 0.4s ease-in-out;
-}
-*/
 .logo_icon {
 	display: block;
 	width: 48px;
@@ -303,7 +291,7 @@ body {
 		display: none;
 	}
 
-	.nav_link {
+	a {
 		position: relative;
 		margin-left: 110px;
 
@@ -319,6 +307,7 @@ body {
 
 		@include not-hg {
 			margin-left: 0;
+			font-size: $font-size--l;
 		}
 	}
 }
@@ -336,7 +325,7 @@ body {
 	justify-content: space-evenly;
 	margin-right: 0;
 	margin-left: 0;
-	background-color: $colors__main_1;
+	background-color: $colors__secondary;
 }
 
 .nav_active + #navToggle {

@@ -229,7 +229,7 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
   font-weight: 700;
 }
 
-.nav .nav_link, .portfolio_item__descripton div h3, .portfolio_item_btn, .art-division a, .art-division p, .breadcrumb, .about__wrapper p, .delivery_content_wrapper p, .delivery_content_wrapper ul {
+.nav a, .portfolio_item__descripton div h3, .portfolio_item_btn, .art-division a, .art-division p, .breadcrumb, .about__wrapper p, .delivery_content_wrapper p, .delivery_content_wrapper ul {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -474,17 +474,6 @@ body {
   fill: #feef6d;
 }
 
-/*
-#svg_logo__l {
-	fill: $colors__svg-2;
-	transition: fill 0.4s ease-in-out;
-}
-
-#svg_logo__r {
-	fill: $colors__svg-1;
-	transition: fill 0.4s ease-in-out;
-}
-*/
 .logo_icon {
   display: block;
   width: 48px;
@@ -570,7 +559,7 @@ body {
   }
 }
 
-.nav .nav_link {
+.nav a {
   position: relative;
   margin-left: 110px;
   color: #1c2135;
@@ -579,23 +568,24 @@ body {
   will-change: color;
 }
 
-.nav .nav_link, .nav .nav_link:focus {
+.nav a, .nav a:focus {
   color: #1c2135;
 }
 
-.nav .nav_link:hover, .nav .nav_link:active {
+.nav a:hover, .nav a:active {
   color: #476fff;
 }
 
 @media only screen and (max-width: 1919px) {
-  .nav .nav_link {
+  .nav a {
     margin-left: 95px;
   }
 }
 
 @media only screen and (max-width: 1365px) {
-  .nav .nav_link {
+  .nav a {
     margin-left: 0;
+    font-size: 20px;
   }
 }
 
@@ -621,7 +611,7 @@ body {
           justify-content: space-evenly;
   margin-right: 0;
   margin-left: 0;
-  background-color: #e43636;
+  background-color: #fff;
 }
 
 .nav_active + #navToggle {
