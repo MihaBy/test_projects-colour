@@ -211,7 +211,8 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
   }
 */
 .header__logo h2, .hero h1, .footer__inner h1,
-.footer__inner h2, .art-division h2, .about__wrapper h2, .offers--hero h1 {
+.footer__inner h2, .footer__inner h1 a,
+.footer__inner h2 a, .art-division h2, .about__wrapper h2, .offers--hero h1 {
   font-family: "Cormorant", serif;
   font-style: normal;
   font-weight: 700;

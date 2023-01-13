@@ -632,6 +632,10 @@ body {
 	h1,
 	h2 {
 		@extend %Cormorant__b;
+
+		a {
+			@extend %Cormorant__b;
+		}
 	}
 
 	h1 {
