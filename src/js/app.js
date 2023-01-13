@@ -17,11 +17,11 @@ $(document).ready(
         
         $("#navToggle").on("click", function(event) {
             event.preventDefalt;
-            console.log(nav.classList);//
+            //console.log(nav.classList);
             if (nav.classList.contains('nav_active')) {
             nav.classList.remove('nav_active');
             nav.style.height = "auto";
-            console.log("nav.style.height _ " + nav.style.height);//
+            //console.log("nav.style.height _ " + nav.style.height);//
         }
             else {
             nav.classList.add('nav_active');
@@ -30,12 +30,23 @@ $(document).ready(
             let secondBlockClassName = "quote";
             let getIntroHeight = document.querySelectorAll(firstBlockNameSelector); 
             
-            getIntroHeight = getIntroHeight[0];
-            getIntroHeight = getIntroHeight.offsetHeight;
+            // add if for find height
+            console.log(getIntroHeight);
+            console.log("getIntroHeight");
+            if (typeof getIntroHeight !== "undefined" && typeof getIntroHeight[0] !== "undefined") { 
+              getIntroHeight = getIntroHeight[0];
+              getIntroHeight = getIntroHeight.offsetHeight;
+              nav.style.height = getIntroHeight + "px"; 
+            }
+            else nav.style.height = "100vh";
             
-            let getQuoteHeight = document.getElementsByClassName(secondBlockClassName)[0].offsetHeight;
+            //getIntroHeight = getIntroHeight[0];
+            //getIntroHeight = getIntroHeight.offsetHeight;
+            
+            //let getQuoteHeight = document.getElementsByClassName(secondBlockClassName)[0].offsetHeight;
             //console.log(getIntroHeight);
-            nav.style.height = getIntroHeight - getQuoteHeight + "px"; 
+            //nav.style.height = getIntroHeight - getQuoteHeight + "px"; 
+            //nav.style.height = getIntroHeight + "px"; 
             }
             //nav.toggleClass('nav_active');
         });
