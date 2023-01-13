@@ -441,6 +441,17 @@ body {
   color: #1c2135;
   font-size: 32px;
   text-transform: uppercase;
+  /*
+	svg:nth-of-type(1) {
+		fill: $colors__svg-2;
+		transition: fill 0.4s ease-in-out;
+	}
+
+	svg:nth-of-type(2) {
+		fill: $colors__svg-1;
+		transition: fill 0.4s ease-in-out;
+	}
+	*/
 }
 
 #svg_logo circle:nth-of-type(1) {
@@ -463,6 +474,17 @@ body {
   fill: #feef6d;
 }
 
+/*
+#svg_logo__l {
+	fill: $colors__svg-2;
+	transition: fill 0.4s ease-in-out;
+}
+
+#svg_logo__r {
+	fill: $colors__svg-1;
+	transition: fill 0.4s ease-in-out;
+}
+*/
 .logo_icon {
   display: block;
   width: 48px;
