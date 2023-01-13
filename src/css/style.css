@@ -667,19 +667,23 @@ body {
 }
 
 .hero h1 {
+  max-width: 1158px;
   color: #fff;
   font-size: 160px;
+  text-align: center;
   text-transform: uppercase;
 }
 
 @media only screen and (max-width: 1919px) {
   .hero h1 {
+    max-width: 1058px;
     font-size: 128px;
   }
 }
 
 @media only screen and (max-width: 1365px) {
   .hero h1 {
+    max-width: 958px;
     font-size: 96px;
   }
 }
@@ -689,6 +693,8 @@ body {
     height: calc(100vh - var(--height_quote__s));
     margin-bottom: 9px;
     font-size: 110px;
+    line-height: 1.2;
+    text-align: left;
     text-orientation: mixed;
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);

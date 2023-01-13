@@ -3,12 +3,12 @@ mixin portfolio_item(item, img_path)
     .portfolio_item
         a(href="./item.html") 
             img.preview_img(src = item.img_src, alt = item.item_name)
-            .portfolio_item__descripton
-                div
-                    h3
-                        q= item.item_name
-                    p size 24х50 mm
-                a.portfolio_item_btn(href="./item.html") see more
+        .portfolio_item__descripton
+            div
+                h3
+                    q= item.item_name
+                p size 24х50 mm
+            a.portfolio_item_btn(href="./item.html") see more
 
 mixin delivery_price(item)
     li 

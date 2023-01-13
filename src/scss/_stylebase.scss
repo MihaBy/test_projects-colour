@@ -365,15 +365,19 @@ body {
 	h1 {
 		@extend %Cormorant__b;
 
+		max-width: 1158px;
 		color: $colors__secondary;
 		font-size: $font-size--h1;
+		text-align: center;
 		text-transform: uppercase;
 
 		@include not-xhg {
+			max-width: 1058px;
 			font-size: $font-size--h1--sm;
 		}
 
 		@include not-hg {
+			max-width: 958px;
 			font-size: $font-size--h1--xs;
 		}
 
@@ -381,6 +385,8 @@ body {
 			height: calc(100vh - var(--height_quote__s));
 			margin-bottom: 9px;
 			font-size: $font-size--h1--s;
+			line-height: $line-height--custom;
+			text-align: left;
 			text-orientation: mixed;
 			transform: rotate(180deg);
 			writing-mode: vertical-rl;
