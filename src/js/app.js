@@ -286,13 +286,23 @@ let quoteMainElement = document.getElementsByClassName('quote')[0];
 
   if( typeof(quoteBlockName) != "undefined" && typeof(quoteMainElement) != "undefined") {
 
-    for(var i = 0; i< quoteBlockName.length; i++) {
-      let pElement = quoteBlockName[i];
+    
+      let pElement = quoteBlockName[0];
       for (const child of pElement.children) {
         if (child.tagName == 'SPAN') {
+
+          //
+          console.log(child.innerHTML);
+          console.log('child.innerHTML');
+          quoteMainElement.style.setProperty('--item--content', child.innerHTML); 
+          //child.firstChild.textContent = child.innerHTML;
+          console.log(child.firstChild.textContent);
+          console.log('child.firstChild.textContent');
+          //
           //console.log(child.tagName);
           console.log(child);
           let spanWidth = child.offsetWidth;
+          spanWidth = spanWidth + "px"
           console.log(spanWidth);
           console.log(child.firstChild);
           // console.log(child.firstChild.textContent); //work 50% of sales for the needs of the Ukrainian relief fund
@@ -315,7 +325,7 @@ let quoteMainElement = document.getElementsByClassName('quote')[0];
          // console.log(':before__offsetWidth');
         }
       }
-    }
+    
   }
 //
 //

@@ -705,7 +705,7 @@ body {
 }
 
 .quote {
-  --item--sub-element--width: max-content;
+  --item--sub-element--width: min-content;
   --item--element--width: calc(var(--item--sub-element--width) * 2);
   --item--block--width: calc(var(--item--element--width) * 2);
   --item--content: "50% of sales for the needs of the Ukrainian relief fund";
@@ -729,13 +729,11 @@ body {
 @media only screen and (max-width: 1365px) {
   .quote {
     height: var(--height_quote__s);
-    --item--sub-element--width: 717px;
   }
 }
 
 @media only screen and (max-width: 809px) {
   .quote {
-    --item--sub-element--width: 597.5px;
     height: var(--height_quote__s);
     text-align: center;
   }
@@ -763,6 +761,9 @@ body {
 }
 
 .quote .quote__item span {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   min-width: var(--item--element--width);
   text-align: center;
 }
@@ -793,7 +794,7 @@ body {
   }
 }
 
-.--animation--run-line0 {
+.--animation--run-line {
   --animation--time: 120000ms;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;

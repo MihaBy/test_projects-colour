@@ -397,7 +397,7 @@ body {
 .quote {
 	@extend %Cormorant-Infant__b;
 
-	--item--sub-element--width: max-content;  // item real width  == 600px=>900 //hg == 478=>717 // add 1.5X //LG == 478 * 1.25 = 597.5
+	--item--sub-element--width: min-content;  // item real width  == 600px=>900 //hg == 478=>717 // add 1.5X //LG == 478 * 1.25 = 597.5
 	--item--element--width: calc(var(--item--sub-element--width) * 2); //span == span + before
 	--item--block--width: calc(var(--item--element--width) * 2);  //p
 	--item--content: "50% of sales for the needs of the Ukrainian relief fund";
@@ -414,11 +414,11 @@ body {
 	@include not-hg {
 		height: var(--height_quote__s);
 
-		--item--sub-element--width: 717px;
+		//--item--sub-element--width: 717px;
 	}
 
 	@include not-lg {
-		--item--sub-element--width: 597.5px;
+		//--item--sub-element--width: 597.5px;
 
 		height: var(--height_quote__s);
 		text-align: center;
@@ -437,6 +437,7 @@ body {
 		justify-content: space-between;
 
 		span {
+			width: max-content;
 			min-width: var(--item--element--width);
 			text-align: center;
 
@@ -465,7 +466,7 @@ body {
 	}
 }
 
-.--animation--run-line0 {
+.--animation--run-line {
 	--animation--time: 120000ms;
 
 	animation-delay: 0s;
