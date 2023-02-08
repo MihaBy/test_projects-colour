@@ -794,7 +794,7 @@ body {
   }
 }
 
-.--animation--run-line {
+.--animation--run-line0 {
   --animation--time: 120000ms;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;

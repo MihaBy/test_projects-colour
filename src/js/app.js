@@ -286,7 +286,14 @@ let quoteMainElement = document.getElementsByClassName('quote')[0];
 
   if( typeof(quoteBlockName) != "undefined" && typeof(quoteMainElement) != "undefined") {
 
-    
+    function changeSpanWidth(child) {
+      let spanWidth = child.offsetWidth;
+      spanWidth = spanWidth / 2;
+      spanWidth = spanWidth + "px";
+      quoteMainElement.style.setProperty('--item--sub-element--width', spanWidth); 
+    }
+
+
       let pElement = quoteBlockName[0];
       for (const child of pElement.children) {
         if (child.tagName == 'SPAN') {
@@ -294,22 +301,30 @@ let quoteMainElement = document.getElementsByClassName('quote')[0];
           //
           console.log(child.innerHTML);
           console.log('child.innerHTML');
-          quoteMainElement.style.setProperty('--item--content', child.innerHTML); 
-          //child.firstChild.textContent = child.innerHTML;
+          let innerContent  = child.innerHTML;
+          console.log(typeof innerContent);
+          console.log('innerContent type');
+          innerContent = ' " ' + innerContent + ' " ';
+          console.log(innerContent);
+          console.log('innerContent ');
+          quoteMainElement.style.setProperty('--item--content', innerContent); 
           console.log(child.firstChild.textContent);
           console.log('child.firstChild.textContent');
           //
           //console.log(child.tagName);
+          changeSpanWidth(child);
+          /*
           console.log(child);
           let spanWidth = child.offsetWidth;
           spanWidth = spanWidth + "px"
           console.log(spanWidth);
           console.log(child.firstChild);
+          */
           // console.log(child.firstChild.textContent); //work 50% of sales for the needs of the Ukrainian relief fund
           console.log(quoteMainElement);
-          let quoteMainElementVar =  quoteMainElement.style.setProperty('--item--sub-element--width', spanWidth); 
+          //let quoteMainElementVar =  quoteMainElement.style.setProperty('--item--sub-element--width', spanWidth); 
           //console.log(quoteMainElementVar + "var");
-          let simpleElementContent = getComputedStyle(child, ':before').getPropertyValue('content');
+          //let simpleElementContent = getComputedStyle(child, ':before').getPropertyValue('content');
           //console.log(getComputedStyle(child, ':before').getPropertyValue('style.Width')) ;
           //console.log(simpleElementContent);
           //simpleElementContent = "new content";
