@@ -705,41 +705,38 @@ body {
 }
 
 .quote {
+  --item--sub-element--width: max-content;
+  --item--element--width: calc(var(--item--sub-element--width) * 2);
+  --item--block--width: calc(var(--item--element--width) * 2);
+  --item--content: "50% of sales for the needs of the Ukrainian relief fund";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  overflow: hidden;
   height: var(--height_quote__l);
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #1c2135;
-  color: #fff;
-  font-size: 20px;
+  text-align: center;
   text-transform: uppercase;
-  vertical-align: middle;
 }
 
 @media only screen and (max-width: 1365px) {
   .quote {
     height: var(--height_quote__s);
-    font-size: 16px;
+    --item--sub-element--width: 717px;
   }
 }
 
 @media only screen and (max-width: 809px) {
   .quote {
+    --item--sub-element--width: 597.5px;
     height: var(--height_quote__s);
-    font-size: 16px;
     text-align: center;
   }
 }
@@ -747,6 +744,93 @@ body {
 .quote.--secondary_bgc {
   background-color: #fff;
   color: #1c2135;
+}
+
+.quote .quote__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: var(--item--block--width);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.quote .quote__item span {
+  min-width: var(--item--element--width);
+  text-align: center;
+}
+
+.quote .quote__item span::before {
+  display: inline-block;
+  min-width: var(--item--sub-element--width);
+  margin-right: var(--before--margin-right);
+  content: var(--item--content);
+  text-align: left;
+}
+
+.quote--main-style {
+  background-color: #1c2135;
+  color: #fff;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 1365px) {
+  .quote--main-style {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  .quote--main-style {
+    font-size: 16px;
+  }
+}
+
+.--animation--run-line0 {
+  --animation--time: 120000ms;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: var(--animation--time);
+          animation-duration: var(--animation--time);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: scroll-left;
+          animation-name: scroll-left;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes scroll-left {
+  0% {
+    -webkit-transform: translate3d(150%, 0, 0);
+            transform: translate3d(150%, 0, 0);
+    /* transform: translateZ(0); default */
+  }
+  to {
+    -webkit-transform: translate3d(-150%, 0, 0);
+            transform: translate3d(-150%, 0, 0);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    -webkit-transform: translate3d(150%, 0, 0);
+            transform: translate3d(150%, 0, 0);
+    /* transform: translateZ(0); default */
+  }
+  to {
+    -webkit-transform: translate3d(-150%, 0, 0);
+            transform: translate3d(-150%, 0, 0);
+  }
 }
 
 /* ---------- MAIN PORTFOLIO ---------- */

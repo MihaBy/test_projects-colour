@@ -1,3 +1,4 @@
+
 console.log("run");
 
 
@@ -275,6 +276,53 @@ $(document).ready(
             else return false;
         });
         */
+
+
+//
+//
+//test
+let quoteBlockName = document.getElementsByClassName('quote__item');
+let quoteMainElement = document.getElementsByClassName('quote')[0];
+
+  if( typeof(quoteBlockName) != "undefined" && typeof(quoteMainElement) != "undefined") {
+
+    for(var i = 0; i< quoteBlockName.length; i++) {
+      let pElement = quoteBlockName[i];
+      for (const child of pElement.children) {
+        if (child.tagName == 'SPAN') {
+          //console.log(child.tagName);
+          console.log(child);
+          let spanWidth = child.offsetWidth;
+          console.log(spanWidth);
+          console.log(child.firstChild);
+          // console.log(child.firstChild.textContent); //work 50% of sales for the needs of the Ukrainian relief fund
+          console.log(quoteMainElement);
+          let quoteMainElementVar =  quoteMainElement.style.setProperty('--item--sub-element--width', spanWidth); 
+          //console.log(quoteMainElementVar + "var");
+          let simpleElementContent = getComputedStyle(child, ':before').getPropertyValue('content');
+          //console.log(getComputedStyle(child, ':before').getPropertyValue('style.Width')) ;
+          //console.log(simpleElementContent);
+          //simpleElementContent = "new content";
+          //getComputedStyle(child, ':before').setPropertyValue(simpleElementContent);
+          let simpleElementLength = child.firstChild.length; //55
+          let simpleElementWidth =  simpleElementLength * 20 //font size
+
+         //console.log(child.firstChild.getPropertyValue('textContent'));
+         // console.log('textContent');
+         // console.log(child.firstChild.getPropertyValue('offsetWidth'));
+         // console.log('offsetWidth');
+          console.log(getComputedStyle(child, ':before').getPropertyValue('content'));
+         // console.log(':before__offsetWidth');
+        }
+      }
+    }
+  }
+//
+//
+//console.log(getComputedStyle(document.querySelector('p'), ':before').getPropertyValue('content'));
+        
+
+
 });
 
 

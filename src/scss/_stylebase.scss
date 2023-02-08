@@ -397,33 +397,94 @@ body {
 .quote {
 	@extend %Cormorant-Infant__b;
 
+	--item--sub-element--width: max-content;  // item real width  == 600px=>900 //hg == 478=>717 // add 1.5X //LG == 478 * 1.25 = 597.5
+	--item--element--width: calc(var(--item--sub-element--width) * 2); //span == span + before
+	--item--block--width: calc(var(--item--element--width) * 2);  //p
+	--item--content: "50% of sales for the needs of the Ukrainian relief fund";
+
 	display: flex;
-	width: 100%;
+	overflow: hidden;
 	height: var(--height_quote__l);
-	flex-direction: row;
-	flex-wrap: wrap;
+	align-content: center;
 	align-items: center;
 	justify-content: center;
-	background-color: $colors__primary;
-	color: $colors__secondary;
-	font-size: $font-size--l;
+	text-align: center;
 	text-transform: uppercase;
-	vertical-align: middle;
 
 	@include not-hg {
 		height: var(--height_quote__s);
-		font-size: $font-size--base;
+
+		--item--sub-element--width: 717px;
 	}
 
 	@include not-lg {
+		--item--sub-element--width: 597.5px;
+
 		height: var(--height_quote__s);
-		font-size: $font-size--base;
 		text-align: center;
 	}
 
 	&.--secondary_bgc {
 		background-color: $colors__secondary;
 		color: $colors__primary;
+	}
+
+	.quote__item {
+		display: flex;
+		width: var(--item--block--width);
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+
+		span {
+			min-width: var(--item--element--width);
+			text-align: center;
+
+			&::before {
+				display: inline-block;
+				min-width: var(--item--sub-element--width);
+				margin-right: var(--before--margin-right);
+				content: var(--item--content);
+				text-align: left;
+			}
+		}
+	}
+}
+
+.quote--main-style {
+	background-color: $colors__primary;
+	color: $colors__secondary;
+	font-size: $font-size--l; //20
+
+	@include not-hg {
+		font-size: $font-size--base; //16
+	}
+
+	@include not-lg {
+		font-size: $font-size--base;
+	}
+}
+
+.--animation--run-line0 {
+	--animation--time: 120000ms;
+
+	animation-delay: 0s;
+	animation-duration: var(--animation--time);
+	animation-iteration-count: infinite;
+	animation-name: scroll-left;
+	animation-play-state: running;
+	animation-timing-function: linear;
+}
+
+@keyframes scroll-left {
+	0% {
+		transform: translate3d(150%, 0, 0);
+
+		/* transform: translateZ(0); default */
+	}
+
+	to {
+		transform: translate3d(-150%, 0, 0);
 	}
 }
 
