@@ -400,7 +400,7 @@ body {
 	--item--sub-element--width: min-content;  // item real width  == 600px=>900 //hg == 478=>717 // add 1.5X //LG == 478 * 1.25 = 597.5
 	--item--element--width: calc(var(--item--sub-element--width) * 2); //span == span + before
 	--item--block--width: calc(var(--item--element--width) * 2);  //p
-	--item--content: "50% of sales for the needs of the Ukrainian relief fund";
+	--item--content: " ";
 
 	display: flex;
 	overflow: hidden;
@@ -454,7 +454,9 @@ body {
 
 .quote--main-style {
 	background-color: $colors__primary;
+	background-color: #aaa;
 	color: $colors__secondary;
+	color: #480000;
 	font-size: $font-size--l; //20
 
 	@include not-hg {
@@ -466,7 +468,7 @@ body {
 	}
 }
 
-.--animation--run-line0 {
+.--animation--run-line {
 	--animation--time: 120000ms;
 
 	animation-delay: 0s;

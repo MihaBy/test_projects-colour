@@ -281,38 +281,82 @@ $(document).ready(
 //
 //
 //test
-let quoteBlockName = document.getElementsByClassName('quote__item');
-let quoteMainElement = document.getElementsByClassName('quote')[0];
+/*
+.quote.quote--main-style
+    p.quote__item.--animation--run-line 
+        span 50% of sales for the needs of the Ukrainian relief fund some text
+
+
+*/ 
+
+// перевести на атрибуты
+// разнести стили
+const quoteBlockConfig = {
+  item: 'quote__item',
+  block: 'quote',
+  itemContent: '--item--content',
+  widthBeforeElement: '--item--sub-element--width',
+  quantity: 3, 
+  scaleCoeffitient: 1.3,
+}
+
+let quoteBlockName = document.getElementsByClassName(quoteBlockConfig.item)[0];
+let quoteMainElement = document.getElementsByClassName(quoteBlockConfig.block)[0];
 
   if( typeof(quoteBlockName) != "undefined" && typeof(quoteMainElement) != "undefined") {
 
     function changeSpanWidth(child) {
       let spanWidth = child.offsetWidth;
+      spanWidth = spanWidth * quoteBlockConfig.scaleCoeffitient;
       spanWidth = spanWidth / 2;
       spanWidth = spanWidth + "px";
-      quoteMainElement.style.setProperty('--item--sub-element--width', spanWidth); 
+      quoteMainElement.style.setProperty(quoteBlockConfig.widthBeforeElement, spanWidth); 
     }
 
+    function setElementContent(child) {
+      let innerContent  = child.innerHTML;
+      innerContent = ' " ' + innerContent + ' " ';
+      quoteMainElement.style.setProperty(quoteBlockConfig.itemContent, innerContent);
+               
+      console.log(typeof innerContent);
+      console.log('innerContent type');
+      console.log(innerContent);
+      console.log('innerContent '); 
+    }
 
-      let pElement = quoteBlockName[0];
+    function createItemBlock () {
+      /*
+      p.quote__item.--animation--run-line 
+        span 50% of sales for the needs of the Ukrainian relief fund some text
+      */
+    // console.info(clone);
+   //  console.info(quoteBlockConfig.quantity);
+     for (let i = 0; i < quoteBlockConfig.quantity; i++ ) {
+      var clone = quoteBlockName.cloneNode(true);
+      quoteMainElement.appendChild(clone);
+      //console.info(' cycle clone');
+     // console.info(i);
+      }
+    }
+
+      let pElement = quoteBlockName;
       for (const child of pElement.children) {
         if (child.tagName == 'SPAN') {
 
-          //
+          //child == span
+
           console.log(child.innerHTML);
           console.log('child.innerHTML');
-          let innerContent  = child.innerHTML;
-          console.log(typeof innerContent);
-          console.log('innerContent type');
-          innerContent = ' " ' + innerContent + ' " ';
-          console.log(innerContent);
-          console.log('innerContent ');
-          quoteMainElement.style.setProperty('--item--content', innerContent); 
+ 
+         
           console.log(child.firstChild.textContent);
           console.log('child.firstChild.textContent');
           //
           //console.log(child.tagName);
+          createItemBlock ();
+          setElementContent(child);
           changeSpanWidth(child);
+
           /*
           console.log(child);
           let spanWidth = child.offsetWidth;
@@ -329,8 +373,8 @@ let quoteMainElement = document.getElementsByClassName('quote')[0];
           //console.log(simpleElementContent);
           //simpleElementContent = "new content";
           //getComputedStyle(child, ':before').setPropertyValue(simpleElementContent);
-          let simpleElementLength = child.firstChild.length; //55
-          let simpleElementWidth =  simpleElementLength * 20 //font size
+          //let simpleElementLength = child.firstChild.length; //55
+          //let simpleElementWidth =  simpleElementLength * 20 //font size
 
          //console.log(child.firstChild.getPropertyValue('textContent'));
          // console.log('textContent');
