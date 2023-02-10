@@ -289,7 +289,6 @@ $(document).ready(
 
 */ 
 
-// разнести стили
 const quoteBlockConfigMain = {
   item: 'quote__item',
   //block: 'quote',
@@ -300,13 +299,23 @@ const quoteBlockConfigMain = {
   CssScaleK: '--scale--k',
   scaleCoeffitient: 1.3,
 }
-
+const quoteBlockConfigSecondary = {
+  item: 'quote__item',
+  //block: 'quote',
+  block: "[data-component='run__line--secondary']",
+  itemContent: '--item--content',
+  widthBeforeElement: '--item--sub-element--width',
+  quantity: 3, 
+  CssScaleK: '--scale--k',
+  scaleCoeffitient: 1.3,
+}
 function RunLine (quoteBlockConfig) {
 
-  let quoteMainElement = document.querySelectorAll("[data-component='run__line--main']")[0];
-  let quoteBlockName = document.getElementsByClassName(quoteBlockConfig.item)[0];
+  let quoteMainElement = document.querySelectorAll(quoteBlockConfig.block)[0];
+  //let quoteBlockName = document.getElementsByClassName(quoteBlockConfig.item)[0];
+  let quoteBlockName = quoteMainElement.children[0];
   //let quoteMainElement = document.getElementsByClassName(quoteBlockConfig.block)[0];
-  
+  console.warn(quoteBlockName);
     if( typeof(quoteBlockName) != "undefined" && typeof(quoteMainElement) != "undefined") {
       
       function getScaleK() {
@@ -318,12 +327,14 @@ function RunLine (quoteBlockConfig) {
       function setScaleK() {
         let value = Number(getScaleK());
           if (value !== "NaN" && value !== 0) {
+            /*
             console.warn(typeof value);
             console.warn( value);
-            console.warn(typeof  quoteBlockConfig.scaleCoeffitient);
+            console.warn(typeof  quoteBlockConfig.scaleCoeffitient);*/
             quoteBlockConfig.scaleCoeffitient = value;
+            /*
             console.warn(typeof  quoteBlockConfig.scaleCoeffitient);
-            console.info(quoteBlockConfig.scaleCoeffitient);
+            console.info(quoteBlockConfig.scaleCoeffitient);*/
           }
       }
       function changeSpanWidth(child) {
@@ -338,11 +349,11 @@ function RunLine (quoteBlockConfig) {
         let innerContent  = child.innerHTML;
         innerContent = ' " ' + innerContent + ' " ';
         quoteMainElement.style.setProperty(quoteBlockConfig.itemContent, innerContent);
-                 
+             /*    
         console.log(typeof innerContent);
         console.log('innerContent type');
         console.log(innerContent);
-        console.log('innerContent '); 
+        console.log('innerContent '); */
       }
   
       function createItemBlock () {
@@ -367,6 +378,7 @@ function RunLine (quoteBlockConfig) {
   
 }
 RunLine (quoteBlockConfigMain);
+RunLine (quoteBlockConfigSecondary);
 });
 
 

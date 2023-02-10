@@ -401,7 +401,6 @@ body {
 	--item--element--width: calc(var(--item--sub-element--width) * 2); //span == span + before
 	--item--block--width: calc(var(--item--element--width) * 2);  //p
 	--item--content: " ";
-	--scale--k: 1.2;
 
 	display: flex;
 	overflow: hidden;
@@ -423,11 +422,8 @@ body {
 
 		height: var(--height_quote__s);
 		text-align: center;
-	}
 
-	&.--secondary_bgc {
-		background-color: $colors__secondary;
-		color: $colors__primary;
+		--scale--k: 1;
 	}
 
 	.quote__item {
@@ -454,10 +450,26 @@ body {
 }
 
 .quote--main-style {
+	--scale--k: 1.5;
+
 	background-color: $colors__primary;
-	background-color: #aaa;
 	color: $colors__secondary;
-	color: #480000;
+	font-size: $font-size--l; //20
+
+	@include not-hg {
+		font-size: $font-size--base; //16
+	}
+
+	@include not-lg {
+		font-size: $font-size--base;
+	}
+}
+
+.quote--secondary-style {
+	--scale--k: 1.5;
+
+	background-color: $colors__secondary;
+	color: $colors__primary;
 	font-size: $font-size--l; //20
 
 	@include not-hg {
@@ -470,7 +482,7 @@ body {
 }
 
 .--animation--run-line {
-	--animation--time: 120000ms;
+	--animation--time: 100000ms;
 
 	animation-delay: 0s;
 	animation-duration: var(--animation--time);
@@ -759,6 +771,7 @@ body {
 	margin-bottom: 35px;
 
 	@include not-hg {
+		justify-content: space-between;
 		margin-bottom: 20px;
 	}
 
@@ -799,18 +812,25 @@ body {
 
 .footer__second_column {
 	.footer--button {
+		display: inline-block;
+		min-width: 140px;
 		//display: inline-block;
 		padding: 4px 19px;
 		background: $colors__secondary;
 		border-radius: 13px;
 		color: $color__t__main;
 		font-size: $font-size--base;
+		text-align: center;
 		text-transform: uppercase;
+
+		& + .footer--button {
+			margin-left: 40px;
+		}
 
 		@include link-color($color__t__main, $colors__main_2);
 
 		@include not-hg {
-			padding: 4px 43px;
+			padding: 4px 20px;
 		}
 
 		@include not-lg {

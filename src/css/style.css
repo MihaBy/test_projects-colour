@@ -709,7 +709,6 @@ body {
   --item--element--width: calc(var(--item--sub-element--width) * 2);
   --item--block--width: calc(var(--item--element--width) * 2);
   --item--content: " ";
-  --scale--k: 1.2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -737,12 +736,8 @@ body {
   .quote {
     height: var(--height_quote__s);
     text-align: center;
+    --scale--k: 1;
   }
-}
-
-.quote.--secondary_bgc {
-  background-color: #fff;
-  color: #1c2135;
 }
 
 .quote .quote__item {
@@ -778,10 +773,9 @@ body {
 }
 
 .quote--main-style {
+  --scale--k: 1.5;
   background-color: #1c2135;
-  background-color: #aaa;
   color: #fff;
-  color: #480000;
   font-size: 20px;
 }
 
@@ -797,8 +791,27 @@ body {
   }
 }
 
+.quote--secondary-style {
+  --scale--k: 1.5;
+  background-color: #fff;
+  color: #1c2135;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 1365px) {
+  .quote--secondary-style {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  .quote--secondary-style {
+    font-size: 16px;
+  }
+}
+
 .--animation--run-line {
-  --animation--time: 120000ms;
+  --animation--time: 100000ms;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
   -webkit-animation-duration: var(--animation--time);
@@ -1180,6 +1193,9 @@ body {
 
 @media only screen and (max-width: 1365px) {
   .footer_item {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-bottom: 20px;
   }
 }
@@ -1235,15 +1251,22 @@ body {
 }
 
 .footer__second_column .footer--button {
+  display: inline-block;
+  min-width: 140px;
   padding: 4px 19px;
   background: #fff;
   border-radius: 13px;
   color: #1c2135;
   font-size: 16px;
+  text-align: center;
   text-transform: uppercase;
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
   will-change: color;
+}
+
+.footer__second_column .footer--button + .footer--button {
+  margin-left: 40px;
 }
 
 .footer__second_column .footer--button, .footer__second_column .footer--button:focus {
@@ -1256,7 +1279,7 @@ body {
 
 @media only screen and (max-width: 1365px) {
   .footer__second_column .footer--button {
-    padding: 4px 43px;
+    padding: 4px 20px;
   }
 }
 
