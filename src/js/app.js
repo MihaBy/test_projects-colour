@@ -289,11 +289,11 @@ $(document).ready(
 
 */ 
 
-// перевести на атрибуты
 // разнести стили
-const quoteBlockConfig = {
+const quoteBlockConfigMain = {
   item: 'quote__item',
-  block: 'quote',
+  //block: 'quote',
+  block: "[data-component='run__line--main']",
   itemContent: '--item--content',
   widthBeforeElement: '--item--sub-element--width',
   quantity: 3, 
@@ -301,102 +301,72 @@ const quoteBlockConfig = {
   scaleCoeffitient: 1.3,
 }
 
-let quoteBlockName = document.getElementsByClassName(quoteBlockConfig.item)[0];
-let quoteMainElement = document.getElementsByClassName(quoteBlockConfig.block)[0];
+function RunLine (quoteBlockConfig) {
 
-  if( typeof(quoteBlockName) != "undefined" && typeof(quoteMainElement) != "undefined") {
-    
-    function getScaleK() {
-      /*
-      let style = window.getComputedStyle(quoteMainElement);
-      console.info(style);
-      console.info('style');
-*/
-      let style = getComputedStyle(quoteMainElement)
-      .getPropertyValue('--scale--k'); // #999999
-     // console.info(style);
-     // console.info('style');
-    //
-      /*let getCssVar = quoteMainElement.style.getPropertyValue(quoteBlockConfig.CssScaleK);
-      console.warn(typeof getCssVar);
-      console.warn( getCssVar);
-      console.warn( 'getCssVar');*/
-     
-      return style;
-      //console.info(getCssVar + "==? 1.2");
-    }
-    function setScaleK() {
-      let value = Number(getScaleK());
-      if (value !== "NaN" && value !== 0) {
-        console.warn(typeof value);
-        console.warn( value);
-        console.warn(typeof  quoteBlockConfig.scaleCoeffitient);
-        quoteBlockConfig.scaleCoeffitient = value;
-        console.warn(typeof  quoteBlockConfig.scaleCoeffitient);
-        console.info(quoteBlockConfig.scaleCoeffitient);
-        
+  let quoteMainElement = document.querySelectorAll("[data-component='run__line--main']")[0];
+  let quoteBlockName = document.getElementsByClassName(quoteBlockConfig.item)[0];
+  //let quoteMainElement = document.getElementsByClassName(quoteBlockConfig.block)[0];
+  
+    if( typeof(quoteBlockName) != "undefined" && typeof(quoteMainElement) != "undefined") {
+      
+      function getScaleK() {
+        let style = getComputedStyle(quoteMainElement)
+        .getPropertyValue('--scale--k'); // #999999
+        return style;
       }
-    
-    }
-    function changeSpanWidth(child) {
-      let spanWidth = child.offsetWidth;
-      spanWidth = spanWidth * quoteBlockConfig.scaleCoeffitient;
-      spanWidth = spanWidth / 2;
-      spanWidth = spanWidth + "px";
-      quoteMainElement.style.setProperty(quoteBlockConfig.widthBeforeElement, spanWidth); 
-    }
-
-    function setElementContent(child) {
-      let innerContent  = child.innerHTML;
-      innerContent = ' " ' + innerContent + ' " ';
-      quoteMainElement.style.setProperty(quoteBlockConfig.itemContent, innerContent);
-               
-      console.log(typeof innerContent);
-      console.log('innerContent type');
-      console.log(innerContent);
-      console.log('innerContent '); 
-    }
-
-    function createItemBlock () {
-      /*
-      p.quote__item.--animation--run-line 
-        span 50% of sales for the needs of the Ukrainian relief fund some text
-      */
-    // console.info(clone);
-   //  console.info(quoteBlockConfig.quantity);
-     for (let i = 0; i < quoteBlockConfig.quantity; i++ ) {
-      var clone = quoteBlockName.cloneNode(true);
-      quoteMainElement.appendChild(clone);
-      //console.info(' cycle clone');
-     // console.info(i);
+  
+      function setScaleK() {
+        let value = Number(getScaleK());
+          if (value !== "NaN" && value !== 0) {
+            console.warn(typeof value);
+            console.warn( value);
+            console.warn(typeof  quoteBlockConfig.scaleCoeffitient);
+            quoteBlockConfig.scaleCoeffitient = value;
+            console.warn(typeof  quoteBlockConfig.scaleCoeffitient);
+            console.info(quoteBlockConfig.scaleCoeffitient);
+          }
       }
-    }
-
-      let pElement = quoteBlockName;
-      setScaleK();
-      createItemBlock ();
-      for (const child of pElement.children) {
-        if (child.tagName == 'SPAN') {
-          console.log(child.innerHTML);
-          console.log('child.innerHTML');
-          console.log(child.firstChild.textContent);
-          console.log('child.firstChild.textContent');
-          //
-          //console.log(child.tagName);
-          
-          
-          setElementContent(child);
-          changeSpanWidth(child);
+      function changeSpanWidth(child) {
+        let spanWidth = child.offsetWidth;
+        spanWidth = spanWidth * quoteBlockConfig.scaleCoeffitient;
+        spanWidth = spanWidth / 2;
+        spanWidth = spanWidth + "px";
+        quoteMainElement.style.setProperty(quoteBlockConfig.widthBeforeElement, spanWidth); 
+      }
+  
+      function setElementContent(child) {
+        let innerContent  = child.innerHTML;
+        innerContent = ' " ' + innerContent + ' " ';
+        quoteMainElement.style.setProperty(quoteBlockConfig.itemContent, innerContent);
+                 
+        console.log(typeof innerContent);
+        console.log('innerContent type');
+        console.log(innerContent);
+        console.log('innerContent '); 
+      }
+  
+      function createItemBlock () {
+       for (let i = 0; i < quoteBlockConfig.quantity; i++ ) {
+        var clone = quoteBlockName.cloneNode(true);
+        quoteMainElement.appendChild(clone);
         }
       }
-    
-  }
-//
-//
-//console.log(getComputedStyle(document.querySelector('p'), ':before').getPropertyValue('content'));
-        
-
-
+  
+  
+        let pElement = quoteBlockName;
+        setScaleK();
+        createItemBlock ();
+        for (const child of pElement.children) {
+          if (child.tagName == 'SPAN') {
+            setElementContent(child);
+            changeSpanWidth(child);
+          }
+        }
+      
+    }
+  
+}
+RunLine (quoteBlockConfigMain);
 });
 
 
