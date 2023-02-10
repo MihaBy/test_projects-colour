@@ -401,6 +401,7 @@ body {
 	--item--element--width: calc(var(--item--sub-element--width) * 2); //span == span + before
 	--item--block--width: calc(var(--item--element--width) * 2);  //p
 	--item--content: " ";
+	--scale--k: 1.2;
 
 	display: flex;
 	overflow: hidden;
