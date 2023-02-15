@@ -148,3 +148,8 @@
 	@include fluidFontSize(16px, 24px, 480px, 1280px, 18px);
   }
 */
+
+@mixin quadSize($size) {
+	width: var($size);
+	height: var($size);
+}

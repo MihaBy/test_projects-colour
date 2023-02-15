@@ -10,7 +10,9 @@ block main
         include ./includes/quote_section
     section.main_portfolio
         .container-h
-            block portfolio_grid 
-                include includes/main_portfolio_grid
+            .main_portfolio_grid 
+                h2 Artwork
+                block portfolio_grid 
+                    include includes/main_portfolio_grid
     block quote 
         include ./includes/quote_secondary_section

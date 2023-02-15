@@ -36,6 +36,32 @@ $font-size--h2--sm: 32px;
 $font-size--h3: 24px;
 $font-size--h4: 20px;
 
+// font-family
+//$font-family__sans: 'Montserrat', Helvetica, Arial, sans-serif;
+//+
+$font-family_quote: 'Cormorant Infant', serif;
+$font-family__headers: 'Cormorant', serif; //700
+$font-family__text: 'Montserrat', sans-serif; //400, 500 700
+//$font-family__italic: 'Cardo', serif;
+//$font-family__cursive: 'Kaushan Script', cursive;
+//$font-family__text: 'Roboto', sans-serif;
+
+//$font-family__icon-fa:'FontAwesome';
+// font-weight
+$font-weight__light: 300;
+$font-weight__regular: 400;
+$font-weight__medium: 500;
+$font-weight__semi-bold: 600;
+$font-weight__bold: 700;
+$font-weight__extra-bold: 800;
+$font-weight__bolder: 900;
+
+// font-style
+$font-style__italic: italic;
+$font-style__normal: normal;
+
+
+
 /*
 
 h1 intro_h 160 700 #FFFFFF Cormorant                    //L -> 128 700  //M -> 96 700   //S -> 110 700
@@ -159,26 +185,3 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
         h3 20 700 #000000 Montserrat
         p 20 500 #000000 Montserrat
 */
-// font-family
-//$font-family__sans: 'Montserrat', Helvetica, Arial, sans-serif;
-//+
-$font-family_quote: 'Cormorant Infant', serif;
-$font-family__headers: 'Cormorant', serif; //700
-$font-family__text: 'Montserrat', sans-serif; //400, 500 700
-//$font-family__italic: 'Cardo', serif;
-//$font-family__cursive: 'Kaushan Script', cursive;
-//$font-family__text: 'Roboto', sans-serif;
-
-//$font-family__icon-fa:'FontAwesome';
-// font-weight
-$font-weight__light: 300;
-$font-weight__regular: 400;
-$font-weight__medium: 500;
-$font-weight__semi-bold: 600;
-$font-weight__bold: 700;
-$font-weight__extra-bold: 800;
-$font-weight__bolder: 900;
-
-// font-style
-$font-style__italic: italic;
-$font-style__normal: normal;

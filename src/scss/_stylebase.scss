@@ -113,30 +113,36 @@ body {
 /* ---------- NAVIGATION ---------- */
 
 .header {
+	--margin-top: 48px;
+	--margin-top--sm: 25px;
+
 	position: absolute;
 	z-index: 10;
 	top: 0;
 	left: 0;
 	width: 100%;
-	margin-top: 48px;
+	margin-top: var(--margin-top);
 	background-color: $colors__secondary;
 
 	@include not-xhg {
-		margin-top: 48px;
+		margin-top: var(--margin-top);
 	}
 
 	@include not-hg {
-		margin-top: 25px;
+		margin-top: var(--margin-top--sm);
 	}
 
 	@include not-lg {
-		margin-top: 25px;
+		margin-top: var(--margin-top--sm);
 	}
 }
 
 .header__inner {
+	--height-main: 50px;
+	--height-sm: 40px;
+
 	display: flex;
-	height: 50px;
+	height: var(--height-main);
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: center;
@@ -145,23 +151,23 @@ body {
 	padding-right: 11%;
 
 	@include not-xhg {
-		height: 50px;
+		height: var(--height-main);
 		//padding: 0 151px 0 151px;
 		padding: 0;
 	}
 
 	@include not-hg {
-		height: 40px;
+		height: var(--height-sm);
 		//padding: 0 calc(90px - 3px) 0 90px;
 	}
 
 	@include not-lg {
-		height: 40px;
+		height: var(--height-sm);
 		//padding: 0 calc(31px - 3px) 0 31px;
 	}
 
 	@include not-md {
-		height: 40px;
+		height: var(--height-sm);
 		//padding: 0 calc(31px - 3px) 0 31px;
 	}
 }
@@ -173,10 +179,12 @@ body {
 	align-items: center;
 	justify-content: flex-start;
 	color: $colors__primary;
-	font-size: $font-size--h2--sm;
+	font-size: $font-size--h3;
 	text-transform: uppercase;
 
-	h2 { @extend %Cormorant__b; }
+	h3 {
+		@extend %Cormorant__b;
+	}
 
 	/*
 	svg:nth-of-type(1) {
@@ -316,6 +324,7 @@ body {
 	position: absolute;
 	top: 100%;
 	right: 0;
+	bottom: 0;
 	left: 0;
 	display: block;
 	display: flex;
@@ -670,295 +679,7 @@ body {
 	}
 }
 
-/* ---------- FOOTER ---------- */
-.footer {
-	background-color: $footer__bg_prime_color;
-	color: $color__t__h;
-}
-
-.footer__inner {
-	display: flex;
-	flex-flow: column;
-	padding-top: 69px;
-	padding-bottom: 20px;
-
-	@include not-hg {
-		padding-top: 36px;
-	}
-
-	@include not-lg {
-		padding-top: 30px;
-		padding-bottom: 0;
-	}
-
-	& > p {
-		padding-bottom: 12px;
-
-		@include not-xhg {
-			padding-bottom: 25px;
-		}
-
-		@include not-hg {
-			padding-bottom: 25px;
-		}
-
-		@include not-lg {
-			padding-bottom: 20px;
-		}
-	}
-
-	p,
-	a {
-		@extend %Montserrat__r;
-	}
-
-	h1,
-	h2 {
-		@extend %Cormorant__b;
-
-		a {
-			@extend %Cormorant__b;
-		}
-	}
-
-	h1 {
-		overflow: hidden;
-		width: min-content;
-		order: 2;
-		padding-right: 0.1em;
-		padding-left: 50%;
-		margin-bottom: 30px;
-		margin-left: -50%;
-		background-color: $footer__bg_second_color;
-		color: $footer__bg_prime_color;
-		font-size: $font-size--h1;
-		line-height: 0.6;
-		text-transform: uppercase;
-
-		@include not-hg {
-			width: auto;
-			order: 2;
-			margin-bottom: 24px;
-			font-size: $font-size--h1--xs;
-		}
-
-		@include not-lg {
-			overflow: auto;
-			order: 4;
-			padding-top: 27px;
-			padding-right: 0;
-			padding-bottom: 27px;
-			padding-left: 0;
-			margin-top: 0;
-			margin-right: -30px;
-			margin-bottom: 0;
-			margin-left: -30px;
-			background-color: $footer__bg_second_color;
-			color: $footer__bg_prime_color;
-			font-size: $font-size--h1--xxs;
-			line-height: $line-height--base;
-			text-align: center;
-		}
-	}
-}
-
-.footer_item {
-	display: flex;
-	flex-flow: nowrap;
-	align-content: flex-start;
-	align-items: flex-start;
-	order: 1;
-	margin-bottom: 35px;
-
-	@include not-hg {
-		justify-content: space-between;
-		margin-bottom: 20px;
-	}
-
-	@include not-lg {
-		flex-direction: column;
-		margin-bottom: 20px;
-	}
-}
-
-.footer__first_column {
-	display: inline-flex;
-	width: calc(274px + 46px);
-	flex-direction: column;
-
-	@include not-hg {
-		width: calc(274px + 26px);
-	}
-
-	a {
-		margin-top: calc(-1 * (#{$font-size--h2} * #{$line-height--base} - #{$font-size--h2}));
-		margin-bottom: 8px;
-		font-size: $font-size--h2;
-		text-transform: uppercase;
-	}
-
-	p {
-		font-size: $font-size--base;
-
-		@include not-hg {
-			font-size: $font-size--sm;
-		}
-
-		@include not-lg {
-			margin-bottom: 31px;
-		}
-	}
-}
-
-.footer__second_column {
-	.footer--button {
-		display: inline-block;
-		min-width: 140px;
-		//display: inline-block;
-		padding: 4px 19px;
-		background: $colors__secondary;
-		border-radius: 13px;
-		color: $color__t__main;
-		font-size: $font-size--base;
-		text-align: center;
-		text-transform: uppercase;
-
-		& + .footer--button {
-			margin-left: 40px;
-		}
-
-		@include link-color($color__t__main, $colors__main_2);
-
-		@include not-hg {
-			padding: 4px 20px;
-		}
-
-		@include not-lg {
-			padding: 4px 10px;
-		}
-	}
-
-	.footer-item-social {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		margin-top: 22px;
-		font-size: $font-size--base;
-
-		@include not-hg {
-			flex-direction: row;
-		}
-
-		@include not-lg {
-			flex-direction: column;
-			margin-top: 33px;
-		}
-
-		a {
-			margin-right: 18px;
-
-			@include not-lg {
-				margin-bottom: 11px;
-			}
-		}
-	}
-}
-
-.footer__about_us {
-	max-width: 550px;
-	order: 3;
-	font-size: $font-size--xs;
-
-	@include not-hg {
-		max-width: 500px;
-		order: 3;
-		font-size: $font-size--xxs;
-	}
-}
-
-.footer__copyright {
-	order: 4;
-
-	@include not-hg {
-		order: 4;
-		font-size: $font-size--s;
-	}
-
-	@include not-lg {
-		order: 2;
-	}
-}
-
-/* ---------- ARTWORKS ---------- */
-
-.art-division {
-	margin-top: 153px;
-	margin-right: 26px;
-	margin-left: 26px;
-	line-height: $line-height--custom;
-
-	@include not-xhg {
-		margin-top: 129px;
-	}
-
-	@include not-hg {
-		margin-top: 0;
-		margin-right: 0;
-		margin-left: 0;
-	}
-
-	a {
-		@extend %Montserrat__m;
-	}
-
-	h3 {
-		@extend %Montserrat__b;
-
-		font-size: $font-size--h3;
-
-		&:last-of-type {
-			margin-bottom: 40px;
-		}
-	}
-
-	h4 {
-		@extend %Montserrat__b;
-
-		margin-bottom: 25px;
-		font-size: $font-size--h4;
-	}
-
-	h2 {
-		@extend %Cormorant__b;
-
-		margin-bottom: 20px;
-		font-size: $font-size--h2;
-	}
-
-	p {
-		@extend %Montserrat__m;
-
-		margin-bottom: 24px;
-		font-size: $font-size--l;
-		text-align: justify;
-
-		&:first-of-type {
-			margin-bottom: 48px;
-
-			@include not-xhg {
-				margin-bottom: 24px;
-			}
-
-			@include not-hg {
-				margin-bottom: 48px;
-			}
-		}
-
-		&:last-of-type {
-			margin-bottom: 20px;
-		}
-	}
-}
+@import "./includes/footer";
 
 .breadcrumb {
 	@extend %Montserrat__m;

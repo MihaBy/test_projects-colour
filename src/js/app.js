@@ -39,7 +39,7 @@ $(document).ready(
               getIntroHeight = getIntroHeight.offsetHeight;
               nav.style.height = getIntroHeight + "px"; 
             }
-            else nav.style.height = "100vh";
+            else nav.style.height = "92vh";
             
             //getIntroHeight = getIntroHeight[0];
             //getIntroHeight = getIntroHeight.offsetHeight;
@@ -313,11 +313,11 @@ function RunLine (quoteBlockConfig) {
 
   let quoteMainElement = document.querySelectorAll(quoteBlockConfig.block)[0];
   //let quoteBlockName = document.getElementsByClassName(quoteBlockConfig.item)[0];
-  let quoteBlockName = quoteMainElement.children[0];
+  let quoteBlockName = null;
   //let quoteMainElement = document.getElementsByClassName(quoteBlockConfig.block)[0];
-  console.warn(quoteBlockName);
+  //console.warn(quoteBlockName);
     if( typeof(quoteBlockName) != "undefined" && typeof(quoteMainElement) != "undefined") {
-      
+      quoteBlockName = quoteMainElement.children[0];
       function getScaleK() {
         let style = getComputedStyle(quoteMainElement)
         .getPropertyValue('--scale--k'); // #999999
@@ -375,6 +375,7 @@ function RunLine (quoteBlockConfig) {
         }
       
     }
+   
   
 }
 RunLine (quoteBlockConfigMain);

@@ -210,7 +210,7 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
 	@include fluidFontSize(16px, 24px, 480px, 1280px, 18px);
   }
 */
-.header__logo h2, .hero h1, .footer__inner h1,
+.header__logo h3, .hero h1, .footer__inner h1,
 .footer__inner h2, .footer__inner h1 a,
 .footer__inner h2 a, .art-division h2, .about__wrapper h2, .offers--hero h1 {
   font-family: "Cormorant", serif;
@@ -351,38 +351,42 @@ body {
 
 /* ---------- NAVIGATION ---------- */
 .header {
+  --margin-top: 48px;
+  --margin-top--sm: 25px;
   position: absolute;
   z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
-  margin-top: 48px;
+  margin-top: var(--margin-top);
   background-color: #fff;
 }
 
 @media only screen and (max-width: 1919px) {
   .header {
-    margin-top: 48px;
+    margin-top: var(--margin-top);
   }
 }
 
 @media only screen and (max-width: 1365px) {
   .header {
-    margin-top: 25px;
+    margin-top: var(--margin-top--sm);
   }
 }
 
 @media only screen and (max-width: 809px) {
   .header {
-    margin-top: 25px;
+    margin-top: var(--margin-top--sm);
   }
 }
 
 .header__inner {
+  --height-main: 50px;
+  --height-sm: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 50px;
+  height: var(--height-main);
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -400,26 +404,26 @@ body {
 
 @media only screen and (max-width: 1919px) {
   .header__inner {
-    height: 50px;
+    height: var(--height-main);
     padding: 0;
   }
 }
 
 @media only screen and (max-width: 1365px) {
   .header__inner {
-    height: 40px;
+    height: var(--height-sm);
   }
 }
 
 @media only screen and (max-width: 809px) {
   .header__inner {
-    height: 40px;
+    height: var(--height-sm);
   }
 }
 
 @media only screen and (max-width: 360px) {
   .header__inner {
-    height: 40px;
+    height: var(--height-sm);
   }
 }
 
@@ -440,7 +444,7 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
   color: #1c2135;
-  font-size: 32px;
+  font-size: 24px;
   text-transform: uppercase;
   /*
 	svg:nth-of-type(1) {
@@ -594,6 +598,7 @@ body {
   position: absolute;
   top: 100%;
   right: 0;
+  bottom: 0;
   left: 0;
   display: block;
   display: -webkit-box;
@@ -1254,6 +1259,7 @@ body {
   display: inline-block;
   min-width: 140px;
   padding: 4px 19px;
+  margin-right: 40px;
   background: #fff;
   border-radius: 13px;
   color: #1c2135;
@@ -1265,8 +1271,8 @@ body {
   will-change: color;
 }
 
-.footer__second_column .footer--button + .footer--button {
-  margin-left: 40px;
+.footer__second_column .footer--button:last-child {
+  margin-right: 0;
 }
 
 .footer__second_column .footer--button, .footer__second_column .footer--button:focus {
@@ -1285,7 +1291,10 @@ body {
 
 @media only screen and (max-width: 809px) {
   .footer__second_column .footer--button {
+    display: block;
+    min-width: 124px;
     padding: 4px 10px;
+    margin-bottom: 30px;
   }
 }
 
@@ -1299,6 +1308,9 @@ body {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 22px;
   font-size: 16px;
 }
@@ -1314,22 +1326,37 @@ body {
 
 @media only screen and (max-width: 809px) {
   .footer__second_column .footer-item-social {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin-top: 33px;
   }
 }
 
 .footer__second_column .footer-item-social a {
-  margin-right: 18px;
+  margin-right: 53px;
+}
+
+.footer__second_column .footer-item-social a:last-child {
+  margin-right: 0;
 }
 
 @media only screen and (max-width: 809px) {
   .footer__second_column .footer-item-social a {
+    margin-right: 19px;
     margin-bottom: 11px;
   }
+}
+
+.footer__second_column .footer-item-social .footer-item-social__icons {
+  --size: 38px;
+  fill: #fff;
+  width: var(--size);
+  height: var(--size);
 }
 
 .footer__about_us {

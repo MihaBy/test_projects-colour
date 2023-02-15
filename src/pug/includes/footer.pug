@@ -10,11 +10,17 @@ footer.footer
                     a.footer--button(href="./about.html") contact us
                     a.footer--button(href="#") donate
                     .footer-item-social
-                        a(href="./") icon _ insta
-                        a(href="./") icon _ insta
-                        a(href="./") icon _ insta
+                        a(href="#" target="_blank", rel="noopener noreferrer")
+                            svg.footer-item-social__icons
+                                use(xlink:href=image_path_svg_item + "sprite.svg#svg_instagram_icon")
+                        a(href="#" target="_blank", rel="noopener noreferrer")
+                            svg.footer-item-social__icons
+                                use(xlink:href=image_path_svg_item + "sprite.svg#svg_facebook_icon")
+                        a(href="#" target="_blank", rel="noopener noreferrer")
+                            svg.footer-item-social__icons
+                                use(xlink:href=image_path_svg_item + "sprite.svg#svg_youtube_icon")
             h1.footer__title--huge
-                a(href="./") 
+                a(href="#") 
                     span uacolour
             p.footer__about_us 
                 |A private limited company incorporated in England and Wales under company number 10063271. 
