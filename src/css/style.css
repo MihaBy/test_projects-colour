@@ -594,10 +594,6 @@ body {
   }
 }
 
-.nav a:last-child {
-  background-color: #630202;
-}
-
 .nav_active {
   position: absolute;
   top: 100%;
