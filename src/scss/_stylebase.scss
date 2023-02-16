@@ -577,12 +577,20 @@ body {
 		min-width: 298px;
 		margin: 0 0 30px 0;
 	}
+
+	& > a {
+		display: block;
+		overflow: hidden;
+		max-width: 100%;
+		max-height: 670px;
+	}
 }
 
 .preview_img {
 	display: block;
 	width: 100%;
-	height: auto;
+	height: 100%;
+	object-fit: cover;
 }
 
 .portfolio_item__descripton {
