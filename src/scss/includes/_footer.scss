@@ -165,8 +165,9 @@
 
 		@include not-lg {
 			display: block;
-			min-width: 124px;
+			min-width: 140px;
 			padding: 4px 10px;
+			margin-right: 0;
 			margin-bottom: 30px;
 		}
 	}

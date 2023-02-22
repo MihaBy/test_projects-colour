@@ -110,7 +110,7 @@ $(document).ready(
           arrows: true,
           infinite: true,
           swipeToSlide: true,
-          //initialSlide: slickCurrentSlide,
+          initialSlide: 2,
           responsive: [
             {
                   breakpoint: breakpoints__lg,

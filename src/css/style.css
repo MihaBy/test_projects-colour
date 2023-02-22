@@ -727,6 +727,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+          font-feature-settings: 'pnum' on, 'lnum' on;
   text-align: center;
   text-transform: uppercase;
 }
@@ -903,8 +905,8 @@ body {
 
 @media only screen and (max-width: 1365px) {
   .main_portfolio_grid {
-    -webkit-column-gap: 1%;
-            column-gap: 1%;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
   }
 }
 
@@ -1011,7 +1013,7 @@ body {
 
 @media only screen and (max-width: 1365px) {
   .portfolio_item__descripton div h3 {
-    font-size: 14px;
+    font-size: calc( 0.01799 * 100vw + -0.56835px);
   }
 }
 
@@ -1031,7 +1033,7 @@ body {
 @media only screen and (max-width: 1365px) {
   .portfolio_item__descripton div p {
     margin-left: calc(14px / 2);
-    font-size: 10px;
+    font-size: calc( 0.01079 * 100vw + 1.25899px);
   }
 }
 
@@ -1301,8 +1303,9 @@ body {
 @media only screen and (max-width: 809px) {
   .footer__second_column .footer--button {
     display: block;
-    min-width: 124px;
+    min-width: 140px;
     padding: 4px 10px;
+    margin-right: 0;
     margin-bottom: 30px;
   }
 }

@@ -417,6 +417,7 @@ body {
 	align-content: center;
 	align-items: center;
 	justify-content: center;
+	font-feature-settings: 'pnum' on, 'lnum' on;
 	text-align: center;
 	text-transform: uppercase;
 
@@ -549,7 +550,7 @@ body {
 	grid-template-rows: auto;
 
 	@include not-hg {
-		column-gap: 1%;
+		column-gap: 20px;
 	}
 
 	@include not-lg {
@@ -626,7 +627,8 @@ body {
 			quotes: "“" "”";
 
 			@include not-hg {
-				font-size: $font-size--sm;
+				font-size: calcfluidfontsize($font-size--sm, $font-size--h3, $breakpoints__md, $breakpoints__lg, $units: px);
+				//font-size: $font-size--sm;
 			}
 
 			@include not-lg {
@@ -644,7 +646,8 @@ body {
 
 			@include not-hg {
 				margin-left: calc(#{$font-size--sm} / 2);
-				font-size: $font-size--xxs;
+				//font-size: $font-size--xxs;
+				font-size: calcfluidfontsize($font-size--xxs, $font-size--base, $breakpoints__md, $breakpoints__lg, $units: px);
 			}
 
 			@include not-lg {
