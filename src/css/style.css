@@ -992,12 +992,17 @@ body {
 
 @media only screen and (max-width: 809px) {
   .portfolio_item__descripton {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 12px 0;
   }
 }
 
 @media only screen and (max-width: 809px) {
   .portfolio_item__descripton div {
+    display: block;
     margin: 0 auto 8px auto;
   }
 }
@@ -1076,7 +1081,9 @@ body {
   .portfolio_item_btn {
     display: block;
     width: 100%;
+    max-width: 320px;
     padding: 5px 0;
+    margin: 0 auto;
     font-size: 14px;
     text-align: center;
   }
