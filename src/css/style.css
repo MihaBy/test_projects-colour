@@ -219,7 +219,7 @@ button_back 20 500  #000000 Montserrat                                  //M -> N
 }
 
 .quote {
-  font-family: "Cormorant Infant", serif;
+  font-family: "Cormorant", serif;
   font-style: normal;
   font-weight: 700;
 }
@@ -615,6 +615,7 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  padding-bottom: 30px;
   margin-right: 0;
   margin-left: 0;
   background-color: #fff;
