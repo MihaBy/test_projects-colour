@@ -56,7 +56,7 @@ body {
 
 	@include not-hg {
 		min-width: calc(310px + 310px + 10px);
-		max-width: calc(1270px + 150px + 150px);
+		max-width: calc(1270px);
 		padding-right: 90px;
 		padding-left: 90px;
 	}
@@ -581,17 +581,18 @@ body {
 
 	& > a {
 		display: block;
-		overflow: hidden;
+		//overflow: hidden;
 		max-width: 100%;
-		max-height: 670px;
+		//max-height: 670px;
 	}
 }
 
 .preview_img {
 	display: block;
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	height: auto;
+	//height: 100%;
+	//object-fit: cover;
 }
 
 .portfolio_item__descripton {
@@ -665,20 +666,23 @@ body {
 	@include btn-bgc($colors__main_1, $button_click);
 
 	display: inline-block;
-	padding: 14px 24px;
+	padding: 0.875em 1.5em;//14 24
 	background-color: $colors__main_1;
 	border-radius: 13px;
 	color: $colors__secondary;
-	font-size: $font-size--base;
+	font-size: $font-size--base;//16
 	text-transform: uppercase;
 
 	@include not-xhg {
 		padding: 10px 14px;
+		//padding: 0.6em 1em;
 	}
 
 	@include not-hg {
 		padding: 5px 13px;
-		font-size: $font-size--sm;
+		padding: 0.36em 1em;
+		font-size: calcfluidfontsize($font-size--sm, $font-size--base, $breakpoints__md, $breakpoints__lg, $units: px);
+		//font-size: $font-size--sm;//14
 	}
 
 	@include not-lg {

@@ -10,37 +10,8 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=Cormorant:wght@700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet")
         title UACOLOUR
-        style(type='text/css').
-            HTML {
-                background-repeat: no-repeat;
-                background-position:  50% 0;
-                /* Mobile layout by default */
-                background-image: url( "./static/img/color__full.png" );
-                
-                }
-            @media   ( min-width: 360px ) and (max-width:809px) {
-                HTML {
-                    background-image: url("./static/img/color__sm.png");
-                    background-position:  50% 0;
-                    /*background-position-y: 0;*/
-                    }
-            }
-            @media ( min-width: 810px ) and (max-width:1365px) {
-                HTML {
-                    background-image: url("./static/img/color__m.png");
-                    background-position:  50% 0;
-                    /*background-position-y: 0;*/
-                    }
-            
-            }
-            @media ( min-width: 1366px ) and (max-width:1919px) {
-                HTML {
-                    background-image: url("./static/img/color__lg.png");
-                    background-position:  50% 0;
-                    /*background-position-y: 0;*/
-                    }
-            
-            }
+        block pixel_glass
+            style
         link(rel="stylesheet" type="text/css" href="pixel-glass/styles.css")
         link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
         //link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
